@@ -1,0 +1,148 @@
+:root {
+  --bigDia: 45vh;
+  --medDia: calc(var(--bigDia) - 50px);
+  --smallDia: calc(var(--bigDia) - 150px);
+  --smallRight: 20px;
+  --bigRight: calc(var(--smallRight) + var(--smallDia) / 2);
+  --medRight: calc(var(--smallRight) + var(--smallDia) + 40px);
+  --bigTop: 0px;
+  --smallTop: calc(var(--bigDia) - 10px);
+  --medTop: calc(var(--bigDia) + 10px);
+  --containerHeight: calc(var(--medTop) + var(--medDia));
+  --containerWidth: calc(var(--medRight) + var(--medDia));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montagu Slab", serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("assets/gradient2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: clip;
+}
+
+#intro {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5vw;
+}
+
+.intro-text {
+  font-size: 6rem;
+  color: white;
+  font-weight: 600;
+}
+
+.inserted-text {
+  position: relative;
+  display: inline-block;
+  width: 0px;
+}
+
+.inserted-text span {
+  font-family: "Nanum Pen Script";
+  font-size: 3rem;
+  line-height: 2.8rem;
+  position: absolute;
+  background-color: #ffffff42;
+  color: #49f9ef;
+}
+
+#research {
+  top: -8rem;
+  left: -10px;
+}
+
+#insert-symbol {
+  top: 0rem;
+  left: -10px;
+  line-height: 1rem;
+}
+
+#insert-symbol span {
+  background-color: #ffffff00;
+}
+
+#develop {
+  top: -4rem;
+}
+
+.my-sign {
+  font-family: "Nanum Pen Script";
+  font-size: 2.6rem;
+  color: white;
+  margin-top: 2rem;
+}
+
+#wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+#projects-container {
+  position: relative;
+  height: var(--containerHeight);
+  width: var(--containerWidth);
+  margin: auto;
+}
+
+.container {
+  border: 4px solid white;
+  border-radius: 50%;
+  clip-path: circle(50%);
+  overflow: hidden;
+  position: absolute;
+}
+
+.sphere {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#sphere-uxd-container {
+  width: var(--bigDia);
+  height: var(--bigDia);
+  right: var(--bigRight);
+  top: var(--bigTop);
+}
+
+#sphere-uxd {
+  width: var(--bigDia);
+  height: var(--bigDia);
+}
+
+#sphere-uxr-container {
+  width: var(--medDia);
+  height: var(--medDia);
+  right: var(--medRight);
+  top: var(--medTop);
+}
+
+#sphere-uxr {
+  width: var(--medDia);
+  height: var(--medDia);
+}
+
+#sphere-viz-container {
+  width: var(--smallDia);
+  height: var(--smallDia);
+  right: var(--smallRight);
+  top: var(--smallTop);
+}
+
+#sphere-viz {
+  width: var(--smallDia);
+  height: var(--smallDia);
+}

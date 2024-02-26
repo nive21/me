@@ -1,114 +1,162 @@
-var red = "#e53429";
-var yellow = "#F7B028";
-var pink = "#E097C2";
-var bg = "#008000";
-var white = "#fff";
-
-const shape1 = "15,0 25,2 36,17 11,34 6,34 0,20 5,8";
-const shape2 = "20,8 60,0 93,5 126,52 104,102 62,137 3,102 0,70";
-const shape3 = "14,13 41,0 65,18 84,41 88,91 56,125 24,125 0,91 0,56";
-const shape4 = "24,0 45,22 35,60 12,54 1,35 0,20";
-const shape5 = "19,0 34,0 44,15 44,51 20,53 0,34";
-const shape6 = "12,0 29,0 51,9 64,24 64,42 54,59 39,73 7,73 1,59 0,38";
-const shape7 =
-  "33,0 95,0 116,14 138,39 154,74 170,114 166,148 125,174 95,190 65,205 18,171 0,125 0,45";
-
-// module aliases
-var Engine = Matter.Engine,
-  Render = Matter.Render,
-  World = Matter.World,
-  Bodies = Matter.Bodies,
-  MouseConstraint = Matter.MouseConstraint,
-  Mouse = Matter.Mouse;
-
-// create an engine
-var engine = Engine.create(),
-  world = engine.world;
-
-const boundaryThickness = 10;
-const width = 400;
-const height = 300;
-
-const rendererOptions = {
-  width: width,
-  height: height,
-  wireframes: false,
-  background: white,
-};
-
-// create a renderer
-var render = Render.create({
-  element: document.getElementById("container"),
-  engine: engine,
-  options: rendererOptions,
-});
-
-// Options for the boundaries
-const boundaryOptions = {
-  isStatic: true,
-  render: { fillStyle: white },
-};
-
-// Create the boundaries
-const boundaries = [
-  // Horizontal - top
-  Bodies.rectangle(width / 2, 0, width, boundaryThickness, boundaryOptions),
-  // Horizontal - bottom
-  Bodies.rectangle(
-    width / 2,
-    height,
-    width,
-    boundaryThickness,
-    boundaryOptions
-  ),
-  //   Vertical - right
-  Bodies.rectangle(
-    width,
-    height / 2,
-    boundaryThickness,
-    height,
-    boundaryOptions
-  ),
-  //   Vertical -left
-  Bodies.rectangle(0, height / 2, boundaryThickness, height, boundaryOptions),
+const projects = [
+  {
+    projectName: "Gun study",
+    description: "",
+    projectDuration: "",
+    importance: 20,
+  },
+  {
+    projectName: "PHI",
+    description: "",
+    projectDuration: "",
+    importance: 30,
+  },
+  {
+    projectName: "Joulea",
+    description: "",
+    projectDuration: "",
+    importance: 35,
+  },
+  {
+    projectName: "Dhyana",
+    description: "",
+    projectDuration: "",
+    importance: 50,
+  },
+  {
+    projectName: "Weather",
+    description: "",
+    projectDuration: "",
+    importance: 40,
+  },
+  {
+    projectName: "UIPrin. data",
+    description: "",
+    projectDuration: "",
+    importance: 20,
+  },
+  {
+    projectName: "Tableau",
+    description: "",
+    projectDuration: "",
+    importance: 15,
+  },
+  {
+    projectName: "dataviz scrolly",
+    description: "",
+    projectDuration: "",
+    importance: 30,
+  },
 ];
 
-const bodyOptions = (color) => ({
-  frictionAir: 0,
-  render: { fillStyle: color },
-  restitution: 0.3,
-});
+// Reference: https://codepen.io/Zajno/pen/NWOLdOm
+window.addEventListener("load", async function () {
+  async function createSphere(canvasSphereWrapp) {
+    let sW = canvasSphereWrapp.offsetWidth;
 
-// Create the bodies
-// x, y, radius
-const boxes = [Bodies.circle(60, 60, 30, bodyOptions("#FF0000"))];
-// x, y, sides, radius
-// var box2 = Bodies.polygon(148, 254, 5, 40, bodyOptions("#00FF00"));
-// // x, y, width, height
-// var box3 = Bodies.rectangle(44, 251, 60, 60, bodyOptions("#0000FF"));
+    let Engine = Matter.Engine,
+      Render = Matter.Render,
+      Runner = Matter.Runner,
+      Bodies = Matter.Bodies,
+      Composite = Matter.Composite,
+      World = Matter.World,
+      Mouse = Matter.Mouse,
+      MouseConstraint = Matter.MouseConstraint;
 
-// add all of the bodies to the world
-World.add(engine.world, [...boxes, ...boundaries]);
+    // create an engine
+    let engine = Engine.create();
 
-// run the engine
-Engine.run(engine);
-
-// run the renderer
-Render.run(render);
-
-// add mouse control
-var mouse = Mouse.create(render.canvas),
-  mouseConstraint = MouseConstraint.create(engine, {
-    mouse: mouse,
-    constraint: {
-      stiffness: 0.2,
-      render: {
-        visible: false,
+    // create a renderer
+    let render = Render.create({
+      element: canvasSphereWrapp,
+      engine: engine,
+      options: {
+        isSensor: true,
+        width: canvasSphereWrapp.offsetWidth,
+        height: canvasSphereWrapp.offsetHeight,
+        background: "transparent",
+        wireframes: false,
       },
-    },
-  });
+    });
 
-World.add(world, mouseConstraint);
+    const stack = projects.map((proj) =>
+      Bodies.circle(sW / 2, sW / 2, sW / 15, {
+        restitution: 0.5,
+        render: {
+          fillStyle: "#FFFFFF40",
+          strokeStyle: "white",
+          lineWidth: 4,
+        },
+      })
+    );
 
-// keep the mouse in sync with rendering
-render.mouse = mouse;
+    Composite.add(engine.world, stack);
+
+    // add mouse control
+    let mouse = Mouse.create(render.canvas),
+      mouseConstraint = MouseConstraint.create(engine, {
+        mouse: mouse,
+        constraint: {
+          stiffness: 0.2,
+          render: {
+            visible: false,
+          },
+        },
+      });
+
+    Composite.add(engine.world, mouseConstraint);
+
+    // keep the mouse in sync with rendering
+    render.mouse = mouse;
+
+    Render.run(render);
+
+    r = sW / 2;
+    parts = [];
+    pegCount = 32;
+    for (i = 0; i < pegCount; i++) {
+      angle2 = (Math.PI / pegCount) * (1 + 2 * i);
+      x2 = Math.cos(angle2);
+      y2 = Math.sin(angle2);
+      cx2 = x2 * r + sW / 2;
+      cy2 = y2 * r + sW / 2;
+      rect = addRect({
+        x: cx2,
+        y: cy2,
+        w: (10 / 1000) * sW,
+        h: (100 / 1000) * sW,
+        options: {
+          angle: angle2,
+          isStatic: true,
+          density: 1,
+          render: {
+            fillStyle: "transparent",
+            strokeStyle: "transparent",
+            lineWidth: 0,
+          },
+        },
+      });
+      parts.push(rect);
+    }
+
+    function addBody(...bodies) {
+      World.add(engine.world, ...bodies);
+    }
+
+    function addRect({ x = 0, y = 0, w = 10, h = 10, options = {} } = {}) {
+      body = Bodies.rectangle(x, y, w, h, options);
+      addBody(body);
+      return body;
+    }
+
+    // create runner
+    let runner = Runner.create();
+
+    // run the engine
+    Runner.run(runner, engine);
+  }
+
+  createSphere(document.querySelector("#sphere-uxd"));
+  createSphere(document.querySelector("#sphere-uxr"));
+  createSphere(document.querySelector("#sphere-viz"));
+});
