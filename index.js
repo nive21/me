@@ -1,60 +1,78 @@
-const projects = [
-  {
-    projectName: "Gun study",
-    description: "",
-    projectDuration: "",
-    importance: 20,
-  },
-  {
-    projectName: "PHI",
-    description: "",
-    projectDuration: "",
-    importance: 30,
-  },
-  {
-    projectName: "Joulea",
-    description: "",
-    projectDuration: "",
-    importance: 35,
-  },
-  {
-    projectName: "Dhyana",
-    description: "",
-    projectDuration: "",
-    importance: 50,
-  },
-  {
-    projectName: "Weather",
-    description: "",
-    projectDuration: "",
-    importance: 40,
-  },
-  {
-    projectName: "UIPrin. data",
-    description: "",
-    projectDuration: "",
-    importance: 20,
-  },
-  {
-    projectName: "Tableau",
-    description: "",
-    projectDuration: "",
-    importance: 15,
-  },
-  {
-    projectName: "dataviz scrolly",
-    description: "",
-    projectDuration: "",
-    importance: 30,
-  },
-];
+const projects = {
+  uxd: [
+    {
+      projectName: "Gun study",
+      description: "",
+      projectDuration: "",
+      importance: 20,
+    },
+    {
+      projectName: "PHI",
+      description: "",
+      projectDuration: "",
+      importance: 30,
+    },
+    {
+      projectName: "Joulea",
+      description: "",
+      projectDuration: "",
+      importance: 35,
+    },
+    {
+      projectName: "Dhyana",
+      description: "",
+      projectDuration: "",
+      importance: 50,
+    },
+  ],
+  dataViz: [
+    {
+      projectName: "UIPrin. data",
+      description: "",
+      projectDuration: "",
+      importance: 20,
+    },
+    {
+      projectName: "Tableau",
+      description: "",
+      projectDuration: "",
+      importance: 15,
+    },
+    {
+      projectName: "dataviz scrolly",
+      description: "",
+      projectDuration: "",
+      importance: 30,
+    },
+  ],
+  uxr: [
+    {
+      projectName: "Reddit study",
+      description: "",
+      projectDuration: "",
+      importance: 20,
+    },
+    {
+      projectName: "Smart speaker",
+      description: "",
+      projectDuration: "",
+      importance: 15,
+    },
+    {
+      projectName: "Participation study",
+      description: "",
+      projectDuration: "",
+      importance: 30,
+    },
+  ],
+};
 
 // Reference: https://codepen.io/Zajno/pen/NWOLdOm
 window.addEventListener("load", async function () {
-  async function createSphere(canvasSphereWrapp) {
-    let sW = canvasSphereWrapp.offsetWidth;
+  async function createSphere(containerElement, projectList) {
+    const sW = containerElement.offsetWidth;
 
-    let Engine = Matter.Engine,
+    const Engine = Matter.Engine,
       Render = Matter.Render,
       Runner = Matter.Runner,
       Bodies = Matter.Bodies,
@@ -64,23 +82,23 @@ window.addEventListener("load", async function () {
       MouseConstraint = Matter.MouseConstraint;
 
     // create an engine
-    let engine = Engine.create();
+    const engine = Engine.create();
 
     // create a renderer
-    let render = Render.create({
-      element: canvasSphereWrapp,
+    const render = Render.create({
+      element: containerElement,
       engine: engine,
       options: {
         isSensor: true,
-        width: canvasSphereWrapp.offsetWidth,
-        height: canvasSphereWrapp.offsetHeight,
+        width: containerElement.offsetWidth,
+        height: containerElement.offsetHeight,
         background: "transparent",
         wireframes: false,
       },
     });
 
-    const stack = projects.map((proj) =>
-      Bodies.circle(sW / 2, sW / 2, sW / 15, {
+    const stack = projectList.map((project) =>
+      Bodies.circle(sW / 2, sW / 2, project.importance, {
         restitution: 0.5,
         render: {
           fillStyle: "#FFFFFF40",
@@ -93,7 +111,7 @@ window.addEventListener("load", async function () {
     Composite.add(engine.world, stack);
 
     // add mouse control
-    let mouse = Mouse.create(render.canvas),
+    const mouse = Mouse.create(render.canvas),
       mouseConstraint = MouseConstraint.create(engine, {
         mouse: mouse,
         constraint: {
@@ -150,13 +168,13 @@ window.addEventListener("load", async function () {
     }
 
     // create runner
-    let runner = Runner.create();
+    const runner = Runner.create();
 
     // run the engine
     Runner.run(runner, engine);
   }
 
-  createSphere(document.querySelector("#sphere-uxd"));
-  createSphere(document.querySelector("#sphere-uxr"));
-  createSphere(document.querySelector("#sphere-viz"));
+  createSphere(document.querySelector("#sphere-uxd"), projects.uxd);
+  createSphere(document.querySelector("#sphere-uxr"), projects.dataViz);
+  createSphere(document.querySelector("#sphere-viz"), projects.uxr);
 });

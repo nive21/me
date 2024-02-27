@@ -10,6 +10,12 @@
   --medTop: calc(var(--bigDia) + 10px);
   --containerHeight: calc(var(--medTop) + var(--medDia));
   --containerWidth: calc(var(--medRight) + var(--medDia));
+  --design-initial-angle: -22deg;
+  --design-change-angle: -8deg;
+  --viz-initial-angle: 24deg;
+  --viz-change-angle: -8deg;
+  --research-initial-angle: 40deg;
+  --research-change-angle: -16deg;
 }
 
 * {
@@ -145,4 +151,167 @@ body {
 #sphere-viz {
   width: var(--smallDia);
   height: var(--smallDia);
+}
+
+.projects-text p,
+.projects-text p span {
+  position: absolute;
+  font-family: "Nanum Pen Script";
+  font-size: 2rem;
+  color: white;
+}
+
+/* Text rotation ref: https://css-tricks.com/set-text-on-a-circle/ */
+/* UX design */
+
+.design-text {
+  right: calc(var(--bigRight) + var(--bigDia) / 2);
+  top: var(--bigTop);
+}
+
+.design-text span {
+  height: calc(var(--bigDia) / 2);
+  transform-origin: bottom center;
+}
+
+.design-text span:nth-child(1) {
+  transform: rotate(
+    calc(var(--design-initial-angle) + 8 * var(--design-change-angle))
+  );
+}
+
+.design-text span:nth-child(2) {
+  transform: rotate(
+    calc(var(--design-initial-angle) + 7 * var(--design-change-angle))
+  );
+}
+
+.design-text span:nth-child(3) {
+  transform: rotate(
+    calc(var(--design-initial-angle) + 6 * var(--design-change-angle))
+  );
+}
+
+.design-text span:nth-child(4) {
+  transform: rotate(
+    calc(var(--design-initial-angle) + 5 * var(--design-change-angle))
+  );
+}
+
+.design-text span:nth-child(5) {
+  transform: rotate(
+    calc(var(--design-initial-angle) + 4 * var(--design-change-angle))
+  );
+}
+
+.design-text span:nth-child(6) {
+  transform: rotate(
+    calc(var(--design-initial-angle) + 3 * var(--design-change-angle))
+  );
+}
+
+.design-text span:nth-child(7) {
+  transform: rotate(
+    calc(var(--design-initial-angle) + 2 * var(--design-change-angle))
+  );
+}
+
+.design-text span:nth-child(8) {
+  transform: rotate(
+    calc(var(--design-initial-angle) + 1 * var(--design-change-angle))
+  );
+}
+
+.design-text span:nth-child(9) {
+  transform: rotate(var(--design-initial-angle));
+}
+
+/* Data viz  */
+
+.viz-text {
+  right: calc(var(--medRight) + var(--medDia) - 2.6rem);
+  top: calc(var(--medTop) + 2.6rem);
+  transform: rotate(-40deg);
+}
+
+.viz-text span {
+  height: calc(var(--medDia) / 2);
+  transform-origin: bottom center;
+}
+
+.viz-text span:nth-child(1) {
+  transform: rotate(
+    calc(var(--viz-initial-angle) + 8 * var(--viz-change-angle))
+  );
+}
+
+.viz-text span:nth-child(2) {
+  transform: rotate(
+    calc(var(--viz-initial-angle) + 7 * var(--viz-change-angle))
+  );
+}
+
+.viz-text span:nth-child(3) {
+  transform: rotate(
+    calc(var(--viz-initial-angle) + 6 * var(--viz-change-angle))
+  );
+}
+
+.viz-text span:nth-child(4) {
+  transform: rotate(
+    calc(var(--viz-initial-angle) + 5 * var(--viz-change-angle))
+  );
+}
+
+.viz-text span:nth-child(5) {
+  transform: rotate(
+    calc(var(--viz-initial-angle) + 4 * var(--viz-change-angle))
+  );
+}
+
+.viz-text span:nth-child(6) {
+  transform: rotate(
+    calc(var(--viz-initial-angle) + 3 * var(--viz-change-angle))
+  );
+}
+
+.viz-text span:nth-child(7) {
+  transform: rotate(
+    calc(var(--viz-initial-angle) + 2 * var(--viz-change-angle))
+  );
+}
+
+.viz-text span:nth-child(8) {
+  transform: rotate(
+    calc(var(--viz-initial-angle) + 1 * var(--viz-change-angle))
+  );
+}
+
+.research-text {
+  right: calc(var(--smallRight) + var(--smallDia) / 2 - 0.8rem);
+  top: calc(var(--smallTop) + 0.8rem);
+  transform: rotate(20deg);
+}
+
+.research-text span {
+  height: calc(var(--smallDia) / 2);
+  transform-origin: bottom center;
+}
+
+.research-text span:nth-child(1) {
+  transform: rotate(
+    calc(var(--research-initial-angle) + 8 * var(--research-change-angle))
+  );
+}
+
+.research-text span:nth-child(2) {
+  transform: rotate(
+    calc(var(--research-initial-angle) + 7 * var(--research-change-angle))
+  );
+}
+
+.research-text span:nth-child(3) {
+  transform: rotate(
+    calc(var(--research-initial-angle) + 6 * var(--research-change-angle))
+  );
 }
