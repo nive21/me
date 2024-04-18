@@ -4,24 +4,28 @@ const projects = {
       projectName: "Gun study",
       description: "",
       projectDuration: "",
+      icon: "./assets/projects/dhyana.svg",
       importance: 20,
     },
     {
       projectName: "PHI",
       description: "",
       projectDuration: "",
+      icon: "./assets/projects/dhyana.svg",
       importance: 30,
     },
     {
       projectName: "Joulea",
       description: "",
       projectDuration: "",
+      icon: "./assets/projects/dhyana.svg",
       importance: 35,
     },
     {
       projectName: "Dhyana",
       description: "",
       projectDuration: "",
+      icon: "./assets/projects/dhyana.svg",
       importance: 50,
     },
   ],
@@ -30,18 +34,21 @@ const projects = {
       projectName: "UIPrin. data",
       description: "",
       projectDuration: "",
+      icon: "./assets/projects/dhyana.svg",
       importance: 20,
     },
     {
       projectName: "Tableau",
       description: "",
       projectDuration: "",
+      icon: "./assets/projects/dhyana.svg",
       importance: 15,
     },
     {
       projectName: "dataviz scrolly",
       description: "",
       projectDuration: "",
+      icon: "./assets/projects/dhyana.svg",
       importance: 30,
     },
   ],
@@ -50,18 +57,21 @@ const projects = {
       projectName: "Reddit study",
       description: "",
       projectDuration: "",
+      icon: "./assets/projects/dhyana.svg",
       importance: 20,
     },
     {
       projectName: "Smart speaker",
       description: "",
       projectDuration: "",
+      icon: "./assets/projects/dhyana.svg",
       importance: 15,
     },
     {
       projectName: "Participation study",
       description: "",
       projectDuration: "",
+      icon: "./assets/projects/dhyana.svg",
       importance: 30,
     },
   ],
@@ -71,15 +81,17 @@ const projects = {
 window.addEventListener("load", async function () {
   async function createSphere(containerElement, projectList) {
     const sW = containerElement.offsetWidth;
-
-    const Engine = Matter.Engine,
-      Render = Matter.Render,
-      Runner = Matter.Runner,
-      Bodies = Matter.Bodies,
-      Composite = Matter.Composite,
-      World = Matter.World,
-      Mouse = Matter.Mouse,
-      MouseConstraint = Matter.MouseConstraint;
+    const {
+      Engine,
+      Render,
+      Runner,
+      World,
+      Bodies,
+      Mouse,
+      MouseConstraint,
+      Events,
+      Composite,
+    } = Matter;
 
     // create an engine
     const engine = Engine.create();
@@ -100,10 +112,14 @@ window.addEventListener("load", async function () {
     const stack = projectList.map((project) =>
       Bodies.circle(sW / 2, sW / 2, project.importance, {
         restitution: 0.5,
+        label: "Box A",
         render: {
           fillStyle: "#FFFFFF40",
           strokeStyle: "white",
           lineWidth: 4,
+          sprite: {
+            texture: project.icon,
+          },
         },
       })
     );
@@ -169,6 +185,13 @@ window.addEventListener("load", async function () {
 
     // create runner
     const runner = Runner.create();
+
+    // Open details on a new page when clicked
+    Events.on(mouseConstraint, "mousedown", function (event) {
+      if (event.source.body.label === "Box A") {
+        window.open("https://google.com", "_blank");
+      }
+    });
 
     // run the engine
     Runner.run(runner, engine);

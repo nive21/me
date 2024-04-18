@@ -12,9 +12,9 @@
   --containerWidth: calc(var(--medRight) + var(--medDia));
   --design-initial-angle: -22deg;
   --design-change-angle: -8deg;
-  --viz-initial-angle: 24deg;
-  --viz-change-angle: -8deg;
-  --research-initial-angle: 40deg;
+  --viz-initial-angle: -22deg;
+  --viz-change-angle: -10deg;
+  --research-initial-angle: 65deg;
   --research-change-angle: -16deg;
 }
 
@@ -53,6 +53,7 @@ body {
   position: relative;
   display: inline-block;
   width: 0px;
+  transform: rotate(-2deg);
 }
 
 .inserted-text span {
@@ -62,6 +63,11 @@ body {
   position: absolute;
   background-color: #ffffff42;
   color: #49f9ef;
+}
+
+.inserted-text span:nth-child(2) {
+  top: 3rem;
+  left: 20px;
 }
 
 #research {
@@ -165,7 +171,7 @@ body {
 /* UX design */
 
 .design-text {
-  right: calc(var(--bigRight) + var(--bigDia) / 2);
+  right: calc(var(--bigRight) + var(--bigDia) / 2 + 10px);
   top: var(--bigTop);
 }
 
@@ -229,9 +235,8 @@ body {
 /* Data viz  */
 
 .viz-text {
-  right: calc(var(--medRight) + var(--medDia) - 2.6rem);
-  top: calc(var(--medTop) + 2.6rem);
-  transform: rotate(-40deg);
+  right: calc(var(--medRight) + var(--medDia) / 2 + 10px);
+  top: var(--medTop);
 }
 
 .viz-text span {
@@ -288,9 +293,8 @@ body {
 }
 
 .research-text {
-  right: calc(var(--smallRight) + var(--smallDia) / 2 - 0.8rem);
-  top: calc(var(--smallTop) + 0.8rem);
-  transform: rotate(20deg);
+  right: calc(var(--smallRight) + var(--smallDia) / 2 + 10px);
+  top: var(--smallTop);
 }
 
 .research-text span {
