@@ -1,6 +1,5 @@
 const projectNames = {
-  GUN: "Gun study",
-  PHI: "PHI",
+  POKE: "POKE study",
   JOU: "Joulea",
   DHY: "Dhyana",
   UI: "UI Principles",
@@ -12,33 +11,25 @@ const projectNames = {
 };
 
 const projectPages = {
-  [projectNames.GUN]: "https://google.com",
-  [projectNames.PHI]: "pinterest.com",
-  [projectNames.JOU]: "https://google.com",
-  [projectNames.DHY]: "https://google.com",
-  [projectNames.UI]: "https://google.com",
-  [projectNames.TABLEAU]: "https://google.com",
-  [projectNames.SCROLLY]: "https://google.com",
-  [projectNames.REDDIT]: "https://google.com",
-  [projectNames.SPEAKER]: "https://google.com",
-  [projectNames.FOOD]: "https://google.com",
+  [projectNames.POKE]: "pages/pokemon-asl-game.html",
+  [projectNames.JOU]: "pages/joulea.html",
+  [projectNames.DHY]: "pages/dhyana.html",
+  [projectNames.UI]: "pages/dataviz-learning-tool.html",
+  [projectNames.TABLEAU]: "pages/tableau-competition.html",
+  [projectNames.SCROLLY]: "pages/police-violence.html",
+  [projectNames.REDDIT]: "pages/reddit-study.html",
+  [projectNames.SPEAKER]: "pages/smart-speaker.html",
+  [projectNames.FOOD]: "pages/participation-study.html",
 };
 
 const projects = {
   uxd: [
     {
-      projectName: projectNames.GUN,
+      projectName: projectNames.POKE,
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
       size: 20,
-    },
-    {
-      projectName: projectNames.PHI,
-      description: "",
-      projectDuration: "",
-      icon: "./assets/projects/dhyana.svg",
-      size: 30,
     },
     {
       projectName: projectNames.JOU,
@@ -214,14 +205,21 @@ window.addEventListener("load", async function () {
     // create runner
     const runner = Runner.create();
 
-    const openDetails = function (event) {
-      window.open(projectPages[event.source.body.label], "_blank");
-    };
-
     // Open details on a new page when clicked
-    Events.on(mouseConstraint, "mousedown", openDetails);
+    Events.on(mouseConstraint, "mousedown", (event) => {
+      // if (Matter.Bounds.contains(stack[0].bounds, event.mouse.position)) {
+      if (event?.source?.body?.label) {
+        window.open(projectPages[event.source.body.label], "_blank");
+      }
 
-    Events.off(mouseConstraint, "mouseup", openDetails);
+      // Manually trigger the end of the interaction
+      Matter.MouseConstraint.update(mouseConstraint, mouse);
+      mouseConstraint.constraint.pointA = null;
+      mouseConstraint.constraint.bodyB = null;
+      mouseConstraint.constraint.pointB = null;
+      mouse.button = -1; // Reset the mouse button state to prevent sticking
+      // }
+    });
 
     // TODO: keep shaking and slow down when mouse moves nearby
     let shakeScene = function (engine, bodies) {
@@ -240,11 +238,11 @@ window.addEventListener("load", async function () {
       }
     };
 
-    Events.on(mouseConstraint, "mousemove", function (event) {
-      // get bodies
-      let foundPhysics = Matter.Query.point(stack, event.mouse.position);
-      // shakeScene(engine, foundPhysics);
-    });
+    // Events.on(mouseConstraint, "mousemove", function (event) {
+    //   // get bodies
+    //   let foundPhysics = Matter.Query.point(stack, event.mouse.position);
+    //   // shakeScene(engine, foundPhysics);
+    // });
 
     // run the engine
     Runner.run(runner, engine);
