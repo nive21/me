@@ -29,21 +29,21 @@ const projects = {
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      size: 20,
+      size: 30,
     },
     {
       projectName: projectNames.JOU,
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      size: 35,
+      size: 30,
     },
     {
       projectName: projectNames.DHY,
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      size: 50,
+      size: 30,
     },
   ],
   dataViz: [
@@ -52,14 +52,14 @@ const projects = {
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      size: 20,
+      size: 30,
     },
     {
       projectName: projectNames.TABLEAU,
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      size: 15,
+      size: 30,
     },
     {
       projectName: projectNames.SCROLLY,
@@ -75,14 +75,14 @@ const projects = {
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      size: 20,
+      size: 30,
     },
     {
       projectName: projectNames.SPEAKER,
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      size: 15,
+      size: 30,
     },
     {
       projectName: projectNames.FOOD,
@@ -97,6 +97,7 @@ const projects = {
 // Reference: https://codepen.io/Zajno/pen/NWOLdOm
 window.addEventListener("load", async function () {
   async function createSphere(containerElement, projectList) {
+    // const projectInfo = [...projects.uxd, ...projects.dataViz, ...projects.uxr];
     const sW = containerElement.offsetWidth;
     const {
       Engine,
@@ -104,6 +105,7 @@ window.addEventListener("load", async function () {
       Runner,
       World,
       Bodies,
+      Bounds,
       Body,
       Common,
       Mouse,
@@ -130,7 +132,7 @@ window.addEventListener("load", async function () {
 
     const stack = projectList.map((project) =>
       Bodies.circle(sW / 2, sW / 2, project.size, {
-        restitution: 1,
+        restitution: 0.5,
         label: project.projectName,
         render: {
           fillStyle: "#FFFFFF40",
@@ -164,6 +166,7 @@ window.addEventListener("load", async function () {
 
     Render.run(render);
 
+    // Circles grouping the objects
     r = sW / 2;
     parts = [];
     pegCount = 32;
@@ -207,42 +210,53 @@ window.addEventListener("load", async function () {
 
     // Open details on a new page when clicked
     Events.on(mouseConstraint, "mousedown", (event) => {
-      // if (Matter.Bounds.contains(stack[0].bounds, event.mouse.position)) {
       if (event?.source?.body?.label) {
         window.open(projectPages[event.source.body.label], "_blank");
       }
 
       // Manually trigger the end of the interaction
-      Matter.MouseConstraint.update(mouseConstraint, mouse);
+      MouseConstraint.update(mouseConstraint, mouse);
       mouseConstraint.constraint.pointA = null;
       mouseConstraint.constraint.bodyB = null;
       mouseConstraint.constraint.pointB = null;
       mouse.button = -1; // Reset the mouse button state to prevent sticking
-      // }
     });
 
-    // TODO: keep shaking and slow down when mouse moves nearby
-    let shakeScene = function (engine, bodies) {
-      for (let i = 0; i < bodies.length; i++) {
-        let body = bodies[i];
+    // Flag to control jiggling
+    let isHovering = false;
 
-        if (!body.isStatic) {
-          let forceMagnitude = 0.1;
-
-          // apply the force over a single update
-          Body.applyForce(body, body.position, {
-            x: forceMagnitude * Common.choose([1, -1]),
-            y: -forceMagnitude,
+    const jiggleObjects = () => {
+      for (const item of stack) {
+        if (!isHovering) {
+          // Apply a small random force to the box
+          Body.applyForce(item, item.position, {
+            x: (Math.random() - 0.5) * 0.014, // Random x force
+            y: (Math.random() - 0.5) * 0.014, // Random y force
+          });
+        } else {
+          Body.applyForce(item, item.position, {
+            x: 0,
+            y: 0,
           });
         }
       }
     };
 
-    // Events.on(mouseConstraint, "mousemove", function (event) {
-    //   // get bodies
-    //   let foundPhysics = Matter.Query.point(stack, event.mouse.position);
-    //   // shakeScene(engine, foundPhysics);
-    // });
+    // Update mouse hover status based on mouse events
+    Matter.Events.on(mouseConstraint, "mousemove", function (event) {
+      // Check if hovered for each item
+      isHovering = stack.some((item) => {
+        var mousePosition = event.mouse.position;
+        return Bounds.contains(item.bounds, mousePosition);
+      });
+
+      jiggleObjects();
+    });
+
+    // Continuously apply forces in the update loop
+    Events.on(engine, "beforeUpdate", function () {
+      jiggleObjects();
+    });
 
     // run the engine
     Runner.run(runner, engine);
