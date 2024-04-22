@@ -9,65 +9,159 @@
       defer
     ></script>
     <script src="index.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
     <!-- TODO: Hide the scrollbars -->
     <title>Nivedhitha's Portfolio</title>
   </head>
   <body>
-    <div id ="wrapper">
+    <div id="wrapper">
+      <div id="top-bar">
+        <p>Nivedhitha<br />Mathan Kumar</p>
+        <button class="about-button" onclick="openModal()">ABOUT ME</button>
+      </div>
+      <!-- The modal overlay -->
+      <div class="modal-overlay" id="modalOverlay">
+        <!-- Modal content -->
+        <div class="modal-container">
+          <div class="modal-header">
+            <h2 class="about-title">About me</h2>
+            <!-- Button to close the modal -->
+            <button class="close-button" onclick="closeModal()">
+              <svg
+                width="45"
+                height="45"
+                viewBox="0 0 45 45"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                __snippetScriptLoaded__="yes"
+              >
+                <path
+                  d="M12 35.625L9.375 33L19.875 22.5L9.375 12L12 9.375L22.5 19.875L33 9.375L35.625 12L25.125 22.5L35.625 33L33 35.625L22.5 25.125L12 35.625Z"
+                  fill="black"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="about-intro">
+              <p class="about-intro-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <img
+                class="about-image"
+                src="assets/gradient2.jpg"
+                alt="Description of the image"
+              />
+            </div>
+            <div class="my-sketches">
+              <div class="sketch">
+                <img
+                  src="assets/gradient2.jpg"
+                  alt="Description of the image"
+                />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt
+              </div>
+              <div class="sketch">
+                <img
+                  src="assets/gradient2.jpg"
+                  alt="Description of the image"
+                />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt
+              </div>
+              <div class="sketch">
+                <img
+                  src="assets/gradient2.jpg"
+                  alt="Description of the image"
+                />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt
+              </div>
+              <div class="sketch">
+                <img
+                  src="assets/gradient2.jpg"
+                  alt="Description of the image"
+                />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div id="intro">
         <p class="intro-text">
           <span>I</span>
-          <span class="inserted-text" id="research"><span>research,</span></span>
+          <span class="inserted-text" id="research"
+            ><span>research,</span></span
+          >
           <span class="inserted-text" id="insert-symbol"><span>^</span></span>
           <span>design</span>
-          <span class="inserted-text" id="develop"><span><span>+occasionally,</span><span>develop</span></span></span>
+          <span class="inserted-text" id="develop"
+            ><span><span>+occasionally,</span><span>build</span></span></span
+          >
         </p>
         <p class="intro-text">experiences.</p>
-        <p class="my-sign">-Nivedhitha Mathan Kumar</p>
-      </div>
-    <div id="projects-container">
-      <div class="projects-text">
-        <p class="design-text">
-          <span>U</span>
-          <span>X</span>
-          <span style="opacity: 0;">_</span>
-          <span>D</span>
-          <span>e</span>
-          <span>s</span>
-          <span>i</span>
-          <span>g</span>
-          <span>n</span>
-        </p>
-        <p class="viz-text">
-          <span>D</span>
-          <span>a</span>
-          <span>t</span>
-          <span>a</span>
-          <span style="opacity: 0;">_</span>
-          <span>v</span>
-          <span>i</span>
-          <span>z</span>
-        </p>
-        <p class="research-text">
-          <span>U</span>
-          <span>X</span>
-          <span>R</span>
+        <p class="intro-sub-text">
+          Here are some words about me...Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt. Click on an project on the right to learn more about it.
         </p>
       </div>
-    <div id="sphere-uxd-container" class="container">
-      <div id="sphere-uxd" class="sphere"></div>
+      <div id="projects-container">
+        <div class="projects-text">
+          <p class="design-text">
+            <span>U</span>
+            <span>X</span>
+            <span style="opacity: 0">_</span>
+            <span>D</span>
+            <span>e</span>
+            <span>s</span>
+            <span>i</span>
+            <span>g</span>
+            <span>n</span>
+          </p>
+          <p class="viz-text">
+            <span>D</span>
+            <span>a</span>
+            <span>t</span>
+            <span>a</span>
+            <span style="opacity: 0">_</span>
+            <span>v</span>
+            <span>i</span>
+            <span>z</span>
+          </p>
+          <p class="research-text">
+            <span>U</span>
+            <span>X</span>
+            <span>R</span>
+          </p>
+        </div>
+        <div id="sphere-uxd-container" class="container">
+          <div id="sphere-uxd" class="sphere"></div>
+        </div>
+        <div id="sphere-uxr-container" class="container">
+          <div id="sphere-uxr" class="sphere"></div>
+        </div>
+        <div id="sphere-viz-container" class="container">
+          <div id="sphere-viz" class="sphere"></div>
+        </div>
+      </div>
     </div>
-    <div id="sphere-uxr-container" class="container">
-      <div id="sphere-uxr" class="sphere"></div>
-    </div>
-    <div id="sphere-viz-container" class="container">
-      <div id="sphere-viz" class="sphere"></div>
-    </div>
-  </div>
-</div>
   </body>
 </html>

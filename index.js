@@ -31,7 +31,6 @@ const projects = {
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      projectPage: "https://google.com",
       size: 20,
     },
     {
@@ -39,7 +38,6 @@ const projects = {
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      projectPage: "https://google.com",
       size: 30,
     },
     {
@@ -47,7 +45,6 @@ const projects = {
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      projectPage: "https://google.com",
       size: 35,
     },
     {
@@ -55,59 +52,52 @@ const projects = {
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      projectPage: "https://google.com",
       size: 50,
     },
   ],
   dataViz: [
     {
-      projectName: "UIPrin. data",
+      projectName: projectNames.UI,
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      projectPage: "https://google.com",
       size: 20,
     },
     {
-      projectName: "Tableau",
+      projectName: projectNames.TABLEAU,
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      projectPage: "https://google.com",
       size: 15,
     },
     {
-      projectName: "dataviz scrolly",
+      projectName: projectNames.SCROLLY,
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      projectPage: "https://google.com",
       size: 30,
     },
   ],
   uxr: [
     {
-      projectName: "Reddit study",
+      projectName: projectNames.REDDIT,
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      projectPage: "https://pinterest.com",
       size: 20,
     },
     {
-      projectName: "Smart speaker",
+      projectName: projectNames.SPEAKER,
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      projectPage: "https://abc.com",
       size: 15,
     },
     {
-      projectName: "Participation study",
+      projectName: projectNames.FOOD,
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      projectPage: "https://google.com",
       size: 30,
     },
   ],
@@ -264,3 +254,13 @@ window.addEventListener("load", async function () {
   createSphere(document.querySelector("#sphere-uxr"), projects.dataViz);
   createSphere(document.querySelector("#sphere-viz"), projects.uxr);
 });
+
+// JavaScript to open the modal
+function openModal() {
+  document.getElementById("modalOverlay").style.display = "block";
+}
+
+// JavaScript to close the modal
+function closeModal() {
+  document.getElementById("modalOverlay").style.display = "none";
+}
