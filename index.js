@@ -1,32 +1,62 @@
+const projectNames = {
+  GUN: "Gun study",
+  PHI: "PHI",
+  JOU: "Joulea",
+  DHY: "Dhyana",
+  UI: "UI Principles",
+  TABLEAU: "Tableau",
+  SCROLLY: "Dataviz scrollytelling",
+  REDDIT: "Reddit study",
+  SPEAKER: "SMart speaker",
+  FOOD: "Participation study",
+};
+
+const projectPages = {
+  [projectNames.GUN]: "https://google.com",
+  [projectNames.PHI]: "pinterest.com",
+  [projectNames.JOU]: "https://google.com",
+  [projectNames.DHY]: "https://google.com",
+  [projectNames.UI]: "https://google.com",
+  [projectNames.TABLEAU]: "https://google.com",
+  [projectNames.SCROLLY]: "https://google.com",
+  [projectNames.REDDIT]: "https://google.com",
+  [projectNames.SPEAKER]: "https://google.com",
+  [projectNames.FOOD]: "https://google.com",
+};
+
 const projects = {
   uxd: [
     {
-      projectName: "Gun study",
+      projectName: projectNames.GUN,
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      importance: 20,
+      projectPage: "https://google.com",
+      size: 20,
     },
     {
-      projectName: "PHI",
+      projectName: projectNames.PHI,
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      importance: 30,
+      projectPage: "https://google.com",
+      size: 30,
     },
     {
-      projectName: "Joulea",
+      projectName: projectNames.JOU,
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      importance: 35,
+      projectPage: "https://google.com",
+      size: 35,
     },
     {
-      projectName: "Dhyana",
+      projectName: projectNames.DHY,
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      importance: 50,
+      projectPage: "https://google.com",
+      size: 50,
     },
   ],
   dataViz: [
@@ -35,21 +65,24 @@ const projects = {
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      importance: 20,
+      projectPage: "https://google.com",
+      size: 20,
     },
     {
       projectName: "Tableau",
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      importance: 15,
+      projectPage: "https://google.com",
+      size: 15,
     },
     {
       projectName: "dataviz scrolly",
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      importance: 30,
+      projectPage: "https://google.com",
+      size: 30,
     },
   ],
   uxr: [
@@ -58,21 +91,24 @@ const projects = {
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      importance: 20,
+      projectPage: "https://pinterest.com",
+      size: 20,
     },
     {
       projectName: "Smart speaker",
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      importance: 15,
+      projectPage: "https://abc.com",
+      size: 15,
     },
     {
       projectName: "Participation study",
       description: "",
       projectDuration: "",
       icon: "./assets/projects/dhyana.svg",
-      importance: 30,
+      projectPage: "https://google.com",
+      size: 30,
     },
   ],
 };
@@ -87,6 +123,8 @@ window.addEventListener("load", async function () {
       Runner,
       World,
       Bodies,
+      Body,
+      Common,
       Mouse,
       MouseConstraint,
       Events,
@@ -110,9 +148,9 @@ window.addEventListener("load", async function () {
     });
 
     const stack = projectList.map((project) =>
-      Bodies.circle(sW / 2, sW / 2, project.importance, {
-        restitution: 0.5,
-        label: "Box A",
+      Bodies.circle(sW / 2, sW / 2, project.size, {
+        restitution: 1,
+        label: project.projectName,
         render: {
           fillStyle: "#FFFFFF40",
           strokeStyle: "white",
@@ -186,11 +224,36 @@ window.addEventListener("load", async function () {
     // create runner
     const runner = Runner.create();
 
+    const openDetails = function (event) {
+      window.open(projectPages[event.source.body.label], "_blank");
+    };
+
     // Open details on a new page when clicked
-    Events.on(mouseConstraint, "mousedown", function (event) {
-      if (event.source.body.label === "Box A") {
-        window.open("https://google.com", "_blank");
+    Events.on(mouseConstraint, "mousedown", openDetails);
+
+    Events.off(mouseConstraint, "mouseup", openDetails);
+
+    // TODO: keep shaking and slow down when mouse moves nearby
+    let shakeScene = function (engine, bodies) {
+      for (let i = 0; i < bodies.length; i++) {
+        let body = bodies[i];
+
+        if (!body.isStatic) {
+          let forceMagnitude = 0.1;
+
+          // apply the force over a single update
+          Body.applyForce(body, body.position, {
+            x: forceMagnitude * Common.choose([1, -1]),
+            y: -forceMagnitude,
+          });
+        }
       }
+    };
+
+    Events.on(mouseConstraint, "mousemove", function (event) {
+      // get bodies
+      let foundPhysics = Matter.Query.point(stack, event.mouse.position);
+      // shakeScene(engine, foundPhysics);
     });
 
     // run the engine
