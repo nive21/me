@@ -28,22 +28,22 @@ const projects = {
       projectName: projectNames.POKE,
       description: "",
       projectDuration: "",
-      icon: "./assets/projects/dhyana.svg",
-      size: 30,
+      icon: "./assets/projects/POKE.svg",
+      size: 45,
     },
     {
       projectName: projectNames.JOU,
       description: "",
       projectDuration: "",
-      icon: "./assets/projects/dhyana.svg",
-      size: 30,
+      icon: "./assets/projects/JOU.svg",
+      size: 45,
     },
     {
       projectName: projectNames.DHY,
       description: "",
       projectDuration: "",
-      icon: "./assets/projects/dhyana.svg",
-      size: 30,
+      icon: "./assets/projects/DHY.svg",
+      size: 45,
     },
   ],
   dataViz: [
@@ -51,22 +51,22 @@ const projects = {
       projectName: projectNames.UI,
       description: "",
       projectDuration: "",
-      icon: "./assets/projects/dhyana.svg",
-      size: 30,
+      icon: "./assets/projects/UI.svg",
+      size: 35,
     },
     {
       projectName: projectNames.TABLEAU,
       description: "",
       projectDuration: "",
-      icon: "./assets/projects/dhyana.svg",
-      size: 30,
+      icon: "./assets/projects/TABLEAU.svg",
+      size: 35,
     },
     {
       projectName: projectNames.SCROLLY,
       description: "",
       projectDuration: "",
-      icon: "./assets/projects/dhyana.svg",
-      size: 30,
+      icon: "./assets/projects/SCROLLY.svg",
+      size: 35,
     },
   ],
   uxr: [
@@ -74,21 +74,21 @@ const projects = {
       projectName: projectNames.REDDIT,
       description: "",
       projectDuration: "",
-      icon: "./assets/projects/dhyana.svg",
+      icon: "./assets/projects/REDDIT.svg",
       size: 30,
     },
     {
       projectName: projectNames.SPEAKER,
       description: "",
       projectDuration: "",
-      icon: "./assets/projects/dhyana.svg",
+      icon: "./assets/projects/SPEAKER.svg",
       size: 30,
     },
     {
       projectName: projectNames.FOOD,
       description: "",
       projectDuration: "",
-      icon: "./assets/projects/dhyana.svg",
+      icon: "./assets/projects/FOOD.svg",
       size: 30,
     },
   ],
@@ -96,7 +96,7 @@ const projects = {
 
 // Reference: https://codepen.io/Zajno/pen/NWOLdOm
 window.addEventListener("load", async function () {
-  async function createSphere(containerElement, projectList) {
+  async function createSphere(containerElement, projectList, force) {
     // const projectInfo = [...projects.uxd, ...projects.dataViz, ...projects.uxr];
     const sW = containerElement.offsetWidth;
     const {
@@ -107,7 +107,6 @@ window.addEventListener("load", async function () {
       Bodies,
       Bounds,
       Body,
-      Common,
       Mouse,
       MouseConstraint,
       Events,
@@ -230,8 +229,8 @@ window.addEventListener("load", async function () {
         if (!isHovering) {
           // Apply a small random force to the box
           Body.applyForce(item, item.position, {
-            x: (Math.random() - 0.5) * 0.014, // Random x force
-            y: (Math.random() - 0.5) * 0.014, // Random y force
+            x: (Math.random() - 0.5) * force, // Random x force
+            y: (Math.random() - 0.5) * force, // Random y force
           });
         } else {
           Body.applyForce(item, item.position, {
@@ -262,9 +261,9 @@ window.addEventListener("load", async function () {
     Runner.run(runner, engine);
   }
 
-  createSphere(document.querySelector("#sphere-uxd"), projects.uxd);
-  createSphere(document.querySelector("#sphere-uxr"), projects.dataViz);
-  createSphere(document.querySelector("#sphere-viz"), projects.uxr);
+  createSphere(document.querySelector("#sphere-uxd"), projects.uxd, 0.027);
+  createSphere(document.querySelector("#sphere-uxr"), projects.dataViz, 0.018);
+  createSphere(document.querySelector("#sphere-viz"), projects.uxr, 0.014);
 });
 
 // JavaScript to open the modal

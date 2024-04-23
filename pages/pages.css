@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+h2 {
+  font-size: 6rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 5rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+h6 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+body {
+  margin-top: 50px;
+}
+
+.page-body > div,
+.page-header {
+  margin: 0 5vw 60px;
+}
+
+.page-body > div:last-child {
+  margin-bottom: 0;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.intro {
+  display: flex;
+  gap: 40px;
+}
+
+.title {
+  color: #3340f1;
+}
+
+.intro-text {
+  color: #212121;
+}
+
+.intro-image {
+  width: 50vw;
+}
+
+.sbs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sbs > * {
+  width: calc(45vw - 20px);
+}
+
+.sbs-image {
+  color: #3340f1;
+}
+
+.sbs-image img {
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.key-text-section {
+  background-color: #3340f1;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.key-text-section > * {
+  color: #f6eddb;
+  max-width: 70vw;
+  text-align: center;
+  margin: auto;
+  padding: 120px 0;
+}
