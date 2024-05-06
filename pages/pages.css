@@ -19,9 +19,17 @@ h4 {
   font-weight: 400;
 }
 
-h6 {
+h5 {
   font-size: 1.5rem;
+  color: #3340f1;
   font-weight: 400;
+  padding-bottom: 5px;
+}
+
+h6 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: italic;
 }
 
 body {
@@ -50,10 +58,14 @@ body {
 
 .title {
   color: #3340f1;
+  width: 70%;
 }
 
 .intro-text {
   color: #212121;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .intro-image {
@@ -78,6 +90,16 @@ body {
   padding-bottom: 10px;
 }
 
+.full-width-image {
+  width: 90vw;
+  color: #3340f1;
+}
+
+.full-width-image img {
+  width: 100%;
+  padding-bottom: 10px;
+}
+
 .close-button {
   background: none;
   border: none;
@@ -86,14 +108,19 @@ body {
 
 .key-text-section {
   background-color: #3340f1;
+  color: #f6eddb;
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
 .key-text-section > * {
-  color: #f6eddb;
-  max-width: 70vw;
+  max-width: 80vw;
   text-align: center;
   margin: auto;
-  padding: 120px 0;
+  padding: 120px 0 80px;
+}
+
+.key-text-section h5 {
+  color: #f6eddb;
+  padding-top: 40px;
 }

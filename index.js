@@ -210,7 +210,7 @@ window.addEventListener("load", async function () {
     // Open details on a new page when clicked
     Events.on(mouseConstraint, "mousedown", (event) => {
       if (event?.source?.body?.label) {
-        window.open(projectPages[event.source.body.label], "_blank");
+        window.open(projectPages[event.source.body.label], "_self");
       }
 
       // Manually trigger the end of the interaction
