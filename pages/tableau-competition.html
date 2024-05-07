@@ -3,9 +3,158 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dhyana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="pages.css" />
+    <title>Tracking sentiment shifts</title>
   </head>
   <body>
-    Dhyana page
+    <div class="page-header">
+      <h2 class="title">Tracking sentiment shifts</h2>
+      <!-- Button to close the modal -->
+      <button class="close-button" onclick="closeModal()">
+        <svg
+          width="45"
+          height="45"
+          viewBox="0 0 45 45"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          __snippetScriptLoaded__="yes"
+        >
+          <path
+            d="M12 35.625L9.375 33L19.875 22.5L9.375 12L12 9.375L22.5 19.875L33 9.375L35.625 12L25.125 22.5L35.625 33L33 35.625L22.5 25.125L12 35.625Z"
+            fill="black"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="page-body">
+      <div class="intro">
+        <div class="intro-text">
+          <div>
+            <h5>Problem</h5>
+            <p>
+              The Tableau 2021 Student Iron Viz competition challenged
+              participants to tell a story using music data. The entries were
+              evaluated based on creativity, analysis, beauty/design, and
+              adherence to best practices.
+            </p>
+          </div>
+          <br />
+          <div>
+            <h5>Results</h5>
+            <p>
+              My data visualization secured third place among global entries.
+              Utilizing Spotify metrics, Billboard songs, lyric keywords, and
+              the NRCLex library, I crafted a dashboard that illustrated the
+              shifting sentiments of people over time through their preferences
+              in music.
+            </p>
+          </div>
+        </div>
+        <img
+          class="intro-image"
+          src="../assets/images-on-pages/music/ironviz-photo.png"
+          alt="Description of the image"
+        />
+      </div>
+      <div class="key-text-section">
+        <h3>
+          I achieved the third place at the Tableau Iron Viz: Student Edition in
+          2021.
+        </h3>
+      </div>
+      <div class="sbs">
+        <h4>
+          With the help of NRCLex library, I expanded my dataset to include the
+          sentiment of songs.
+        </h4>
+        <div>
+          <h5>Problem Identification</h5>
+          <p>
+            The primary challenge was finding the right datasets to effectively
+            convey a story. I began with Spotify data, which included metrics on
+            the positivity of songs. This inspired me to explore how these
+            attributes could reflect public sentiment over time. Using Spotify,
+            I analyzed the positivity, speechiness, loudness, and energy of
+            popular songs annually. I expanded my research to categorize the
+            emotion of song lyrics each decade with the help of NRCLex library.
+          </p>
+        </div>
+      </div>
+      <div class="full-width-image">
+        <img
+          src="../assets/images-on-pages/music/radial.png"
+          alt="Description of the image"
+        />
+        <h6>
+          A screenshot of a part of the Tableau dashboard that explored the
+          Spotify metrics for the Billboard Hot songs.
+        </h6>
+      </div>
+      <div class="sbs">
+        <h4>
+          In my visualizations, I opted for radial designs that echoed the
+          appearance of vinyl records.
+        </h4>
+      </div>
+      <div class="sbs">
+        <div class="sbs-image">
+          <img
+            src="../assets/images-on-pages/music/line.png"
+            alt="Description of the image"
+          />
+          <h6>
+            The trend of changing sentiment of the popular songs of each decade.
+          </h6>
+        </div>
+        <div>
+          <h5>Story development</h5>
+          <p>
+            In my visualizations, I opted for radial designs that echoed the
+            appearance of vinyl records. These visuals revealed a trend of
+            decreasing positivity in music, while speechiness, loudness, and
+            energy levels have increased over the years.<br /><br />Further
+            analysis showed a concurrent decrease in negative keywords and a
+            marked rise in expressions of anger, disgust, fear, and darkness
+            during the 2000s.<br /><br />Lastly, an exploratory feature of the
+            dashboard enabled an in-depth review of the positivity trends in
+            songs over the years, uncovering interesting patterns such as a
+            surge in positive songs around Christmas.
+          </p>
+        </div>
+      </div>
+      <div class="key-text-section">
+        <div>
+          <h4>
+            At the Tableau conference in Las Vegas, I shared insights from my
+            project, and engaged with the community to discuss the latest
+            developments in the field. This experience enhanced my interest in
+            and understanding of data and storytelling.
+          </h4>
+          <h5>
+            Please reach out to me at
+            <a
+              href="mailto:nive.mathan21@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >nive.mathan21@gmail.com</a
+            >
+            to discuss the case study in detail.
+          </h5>
+        </div>
+      </div>
+    </div>
+    <script>
+      function closeModal() {
+        window.open("../index.html", "_self");
+      }
+    </script>
   </body>
 </html>

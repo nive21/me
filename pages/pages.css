@@ -26,6 +26,10 @@ h5 {
   padding-bottom: 5px;
 }
 
+.sbs h4 {
+  max-width: 50vw;
+}
+
 h6 {
   font-size: 1.2rem;
   font-weight: 400;
@@ -34,6 +38,10 @@ h6 {
 
 body {
   margin-top: 50px;
+}
+
+li {
+  padding: 6px;
 }
 
 .page-body > div,
@@ -75,14 +83,12 @@ body {
 .sbs {
   display: flex;
   justify-content: space-between;
-}
-
-.sbs > * {
-  width: calc(45vw - 20px);
+  gap: 40px;
 }
 
 .sbs-image {
   color: #3340f1;
+  max-width: 45vw;
 }
 
 .sbs-image img {
@@ -123,4 +129,8 @@ body {
 .key-text-section h5 {
   color: #f6eddb;
   padding-top: 40px;
+}
+
+.key-text-section a {
+  color: wheat;
 }

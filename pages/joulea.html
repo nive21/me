@@ -3,9 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dhyana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="pages.css" />
+    <title>Designing for Efficiency</title>
   </head>
   <body>
-    Dhyana page
+    <div class="page-header">
+      <h2 class="title">Designing for Efficiency</h2>
+      <!-- Button to close the modal -->
+      <button class="close-button" onclick="closeModal()">
+        <svg
+          width="45"
+          height="45"
+          viewBox="0 0 45 45"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          __snippetScriptLoaded__="yes"
+        >
+          <path
+            d="M12 35.625L9.375 33L19.875 22.5L9.375 12L12 9.375L22.5 19.875L33 9.375L35.625 12L25.125 22.5L35.625 33L33 35.625L22.5 25.125L12 35.625Z"
+            fill="black"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="page-body">
+      <div class="sbs">
+        <h4>
+          This is an ongoing project where I am leading the UX initiatives for a
+          climate-focused startup. My role includes
+          <ul style="list-style-type: none; font-size: 1.6rem">
+            <li>🔍 UX research (user interviews, market research)</li>
+            <li>✏️ UX design (branding guidelines, UX flows, UI prototypes)</li>
+            <li>
+              ⌨️ Front-end development (using ReactJS, HTML, and CSS) of the
+              user dashboard
+            </li>
+          </ul>
+        </h4>
+      </div>
+      <div class="key-text-section">
+        <div>
+          <h4>
+            <img src="../assets/misc/lock.svg" alt="lock-icon" />
+            This is a locked project
+          </h4>
+          <h5>
+            For more details on my contributions and the project's progress,
+            please reach out to me at
+            <a
+              href="mailto:nive.mathan21@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >nive.mathan21@gmail.com</a
+            >.
+          </h5>
+        </div>
+      </div>
+    </div>
+    <script>
+      function closeModal() {
+        window.open("../index.html", "_self");
+      }
+    </script>
   </body>
 </html>
