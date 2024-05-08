@@ -3,9 +3,214 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dhyana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="pages.css" />
+    <title>Audio Stories to Remember the Departed</title>
   </head>
   <body>
-    Dhyana page
+    <div class="page-header">
+      <h2 class="title">Audio Stories to Remember the Departed</h2>
+      <!-- Button to close the modal -->
+      <button class="close-button" onclick="closeModal()">
+        <svg
+          width="45"
+          height="45"
+          viewBox="0 0 45 45"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          __snippetScriptLoaded__="yes"
+        >
+          <path
+            d="M12 35.625L9.375 33L19.875 22.5L9.375 12L12 9.375L22.5 19.875L33 9.375L35.625 12L25.125 22.5L35.625 33L33 35.625L22.5 25.125L12 35.625Z"
+            fill="black"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="page-body">
+      <div class="intro">
+        <div class="intro-text">
+          <div>
+            <h5>Problem</h5>
+            <p>
+              For our capstone project in the graduate Human-Computer
+              Interaction class, our objective was to explore the problem and
+              solution space around the theme ‘Remembering the Departed’. We
+              gathered survey data and iterated on prototypes, evaluated them
+              against a set of usability criteria, selected the most promising
+              prototype, and conducted a Wizard-of-Oz test.
+            </p>
+          </div>
+          <br />
+          <div>
+            <h5>Results</h5>
+            Our exploration led us to the potential of using audio stories to
+            memorialize the departed. The Wizard-of-Oz prototype testing
+            resulted in several design implications:
+            <ul>
+              <li>Implementing a narrative format to boost engagement</li>
+              <li>Incorporating ambient sounds to enhance immersivity</li>
+              <li>Providing alternative modalities to facilitate learning</li>
+            </ul>
+          </div>
+        </div>
+        <img
+          class="intro-image"
+          src="../assets/images-on-pages/audio-stories/cover.png"
+          alt="Description of the image"
+          style="max-width: 600px"
+        />
+      </div>
+      <div class="key-text-section">
+        <h3>
+          In each ideation iteration, we brainstormed individually before
+          convening as a team to discuss and vote on the pros and cons of each
+          idea.
+        </h3>
+      </div>
+      <div class="sbs">
+        <h4>
+          We had the survey reviewed and tested with moderation before
+          distributing it.
+        </h4>
+        <div>
+          <h5>Problem Identification</h5>
+          <p>
+            Survey respondents expressed a strong interest in learning about the
+            personal life achievements, stories, and experiences of historical
+            figures. This feedback uncovered an opportunity to help people
+            connect personally with admired historical figures.
+          </p>
+        </div>
+      </div>
+      <div class="full-width-image">
+        <img
+          src="../assets/images-on-pages/audio-stories/personas.png"
+          alt="Description of the image"
+        />
+        <h6>
+          The three personas — primary, secondary, and tertiary — that we
+          referenced to align with our team and the problem statement.
+        </h6>
+      </div>
+      <div class="sbs">
+        <div>
+          <h5>Exploring the Solution Space</h5>
+          <p>
+            Adopting our Point of View (POV) statement, we developed three
+            personas to guide our ideation process. Each team member generated
+            eight quick ideas using the Crazy 8s technique, resulting in a total
+            of 32 concepts. We narrowed these down to three for which we created
+            detailed storyboards. Utilizing scenarios, task analyses, and UI
+            critiques of similar products, we refined our ideas and reached a
+            team consensus.
+            <br /><br />We set specific goals to evaluate our prototypes,
+            focusing on accessibility and memorability. Each prototype was
+            scored against these goals by all team members. Additionally, we
+            collected feedback during a poster session where we presented our
+            storyboard options to attendees. Based on these evaluations, we
+            concluded that an audio app embodying the persona of a historical
+            figure and facilitating ubiquitous learning most effectively met our
+            goals.
+          </p>
+        </div>
+        <div class="sbs-image">
+          <img
+            src="../assets/images-on-pages/audio-stories/storyboard.png"
+            alt="Description of the image"
+          />
+          <h6>
+            One of the storyboard options where we explored a VR interface.
+          </h6>
+        </div>
+      </div>
+      <div class="sbs">
+        <h4>
+          Participants felt difficulty in remembering the information presented
+          by the app. They also found the purely factual responses less engaging
+          than the narrative ones.
+        </h4>
+      </div>
+      <div class="sbs">
+        <div></div>
+        <div style="max-width: 60vw">
+          <h5>Outcome</h5>
+          <p>
+            Employing an AI audio generation tool that mimicked the voice of
+            John F. Kennedy, we devised and tested three tasks through a
+            Wizard-of-Oz prototype. Following initial tests and participant
+            feedback, we conducted further evaluations with nine participants.
+            <br /><br />
+            These tests confirmed the importance of offering multiple modalities
+            in learning. For instance, participants noted the absence of an
+            option to skim through information and felt difficulty in
+            remembering the information presented by the app. Feedback also
+            indicated that purely factual responses were less engaging. From
+            this, we deduced the necessity of using a narrative approach and
+            incorporating ambient sounds that transport users to the historical
+            setting, thereby enhancing engagement and immersion.
+          </p>
+        </div>
+      </div>
+      <div class="full-width-image">
+        <img
+          src="../assets/images-on-pages/audio-stories/results.png"
+          alt="Description of the image"
+        />
+        <h6>
+          Participants noted a difficulty felt in remembering the information
+          presented by the app.
+        </h6>
+      </div>
+      <div class="sbs">
+        <div style="max-width: 60vw">
+          <h5>Reflection</h5>
+          <p>
+            In our usability study, we assumed all participants were familiar
+            with smart speakers, which led to gaps in our explanation of the
+            interface and features. We could have tailored these details based
+            on pre-questionnaire responses or shared them with all
+            participants.<br /><br />
+            Additionally, our survey lacked open-ended questions about
+            participants' reasons for using or not using smart speakers. This
+            oversight limited our understanding of user interactions and
+            preferences. In one of the interviews, further probing revealed
+            challenges in our design decision to use an audio interface,
+            indicating a need for broader questioning.
+          </p>
+        </div>
+        <div></div>
+      </div>
+      <div class="key-text-section">
+        <div>
+          <h4>
+            The project, where I employed a variety of methods and techniques,
+            taught me the pros and cons of each.
+          </h4>
+          <h5>
+            Please reach out to me at
+            <a
+              href="mailto:nive.mathan21@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >nive.mathan21@gmail.com</a
+            >
+            to discuss the case study in detail.
+          </h5>
+        </div>
+      </div>
+    </div>
+    <script>
+      function closeModal() {
+        window.open("../index.html", "_self");
+      }
+    </script>
   </body>
 </html>

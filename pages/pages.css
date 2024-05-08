@@ -78,6 +78,7 @@ li {
 
 .intro-image {
   width: 50vw;
+  object-fit: contain;
 }
 
 .sbs {

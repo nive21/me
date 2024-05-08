@@ -1,5 +1,5 @@
 const projectNames = {
-  POKE: "POKE study",
+  CIRCLE: "CIRCLE study",
   JOU: "Joulea",
   DHY: "Dhyana",
   UI: "UI Principles",
@@ -11,7 +11,7 @@ const projectNames = {
 };
 
 const projectPages = {
-  [projectNames.POKE]: "pages/pokemon-asl-game.html",
+  [projectNames.CIRCLE]: "pages/social-balance.html",
   [projectNames.JOU]: "pages/joulea.html",
   [projectNames.DHY]: "pages/dhyana.html",
   [projectNames.UI]: "pages/dataviz-learning-tool.html",
@@ -25,10 +25,10 @@ const projectPages = {
 const projects = {
   uxd: [
     {
-      projectName: projectNames.POKE,
+      projectName: projectNames.CIRCLE,
       description: "",
       projectDuration: "",
-      icon: "./assets/projects/POKE.svg",
+      icon: "./assets/projects/CIRCLE.svg",
       size: 45,
     },
     {

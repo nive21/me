@@ -3,9 +3,216 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dhyana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="pages.css" />
+    <title>A multitouch interactive tool</title>
   </head>
   <body>
-    Dhyana page
+    <div class="page-header">
+      <h2 class="title">A multitouch interactive tool</h2>
+      <!-- Button to close the modal -->
+      <button class="close-button" onclick="closeModal()">
+        <svg
+          width="45"
+          height="45"
+          viewBox="0 0 45 45"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          __snippetScriptLoaded__="yes"
+        >
+          <path
+            d="M12 35.625L9.375 33L19.875 22.5L9.375 12L12 9.375L22.5 19.875L33 9.375L35.625 12L25.125 22.5L35.625 33L33 35.625L22.5 25.125L12 35.625Z"
+            fill="black"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="page-body">
+      <div class="intro">
+        <div class="intro-text">
+          <div>
+            <h5>Problem</h5>
+            <p>
+              In this project, we aimed to introduce a tool for exploring
+              multivariate data, capitalizing on the increased availability and
+              affordability of touch-based systems. Our objective was to teach
+              data visualization and exploration concepts to young learners
+              using various multitouch interaction techniques as shortcuts to
+              expedite tasks.
+            </p>
+          </div>
+          <br />
+          <div>
+            <h5>Results</h5>
+            <p>
+              We designed and implemented a multitouch interactive
+              data-visualization tool targeted at middle-school students to
+              facilitate data exploration practice. The tool was primarily
+              developed using JavaScript (including D3.js), HTML, and CSS. It
+              enables users to interact via pointers, allowing for the use of
+              fingers (touch) or a stylus interchangeably. Most functions are
+              also accessible through alternative mouse clicks or mouse wheel
+              interactions.
+            </p>
+          </div>
+        </div>
+        <img
+          class="intro-image"
+          src="../assets/images-on-pages/dhyana/cover.png"
+          alt="Description of the image"
+        />
+      </div>
+      <div class="key-text-section">
+        <h3>
+          Developed primarily using JavaScript (including D3.js), HTML, and CSS,
+          the tool enables users to interact via pointers.
+        </h3>
+      </div>
+      <div class="sbs">
+        <h4>
+          Based on our literature review, we decided to build a guided data
+          exploration tool that leverages active interaction techniques for
+          analysis.
+        </h4>
+        <div>
+          <h5>Problem Identification</h5>
+          <p>
+            Our literature review revealed that guided interactive
+            learning—where learners actively engage with information to build
+            their own mental representations—is associated with improved
+            comprehension. Furthermore, visualizations with interactive
+            capabilities were found to enhance comprehensibility significantly.
+            Based on these findings, we developed a guided data exploration tool
+            that leverages active interaction techniques for analysis.
+          </p>
+        </div>
+      </div>
+      <div class="sbs">
+        <div>
+          <h5>Features</h5>
+          After researching similar tools such as TinkerPlots, Kinetica, and
+          DataBreeze, we outlined our requirements, including:
+          <ul>
+            <li>
+              Unit Visualizations: The tool utilizes unit visualizations as the
+              charting type due to their intuitive nature, direct mapping to
+              each data point, and flexibility to transform into various
+              visualization types like dot plots, scatter plots, and beeswarms.
+              This approach also supports accessing details on demand.
+            </li>
+            <li>
+              Zoom and Pan: We addressed the limitation of the 'pinch to zoom'
+              option with fixed aspect ratios in scatter plots by enabling
+              pinching both on the chart and along an axis. Users can also
+              perform a lasso selection when zoomed in. For panning, we
+              implemented a single-pointer drag along the axis to avoid
+              interfering with lasso selection.
+            </li>
+            <li>
+              Sorting and Updating: Users can change the order of attributes
+              along an axis by long-pressing on the axis label, avoiding
+              interference with axis zoom/pan. Updating the x-axis attribute can
+              be performed via a four-pointer swipe on the chart area, also
+              achievable from the control panel.
+            </li>
+            <li>
+              Undo/Redo: Actions can be reversed with a three-finger swipe to
+              the right, or redone with a swipe to the left on the chart.
+            </li>
+          </ul>
+        </div>
+        <div class="sbs-image">
+          <img
+            src="../assets/images-on-pages/ui-principles/actions-prototype.png"
+            alt="Description of the image"
+          />
+          <h6>An initial iteration of the multitouch interactions</h6>
+        </div>
+      </div>
+      <div class="sbs">
+        <h4>
+          We chose unit visualizations due to their direct mapping to each data
+          point and flexibility to transform into various visualizations.
+        </h4>
+      </div>
+      <div class="full-width-image">
+        <img
+          src="../assets/images-on-pages/ui-principles/interactivity.png"
+          alt="Description of the image"
+        />
+        <h6>
+          Pinch on the chart to zoom while keeping the aspect ratio fixed; Pan
+          to swipe; Pinch along the axis to zoom along it.
+        </h6>
+      </div>
+      <div class="sbs">
+        <div class="sbs-image">
+          <img
+            src="../assets/images-on-pages/ui-principles/overview-prototype.png"
+            alt="Description of the image"
+          />
+          <h6>
+            An initial prototype of the control panel - provides an overview of
+            the data and buttons for novices that do the same actions as the
+            shortcuts .
+          </h6>
+        </div>
+        <div>
+          <h5>Challenges</h5>
+          We encountered several challenges:
+          <ul>
+            <li>
+              Browsers such as Firefox and Chrome recognized multiple
+              pointer-downs but tracked pointer-moves for only one pointer at a
+              time.
+            </li>
+            <li>
+              Conflicts between touch and mouse interactions led to issues, such
+              as tooltips activating incorrectly. We temporarily disabled
+              actions on mouseover to mitigate this, although it remains a
+              limitation for mouse users.
+            </li>
+            <li>
+              Some multitouch interactions conflicted with system and browser
+              default shortcuts, like long presses opening context menus. We
+              disabled these default gestures, but this solution may not be
+              ideal for users accustomed to these shortcuts.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="key-text-section">
+        <div>
+          <h4>
+            The next phase involves evaluating the tool with middle-school
+            students to measure its effectiveness in teaching relevant concepts.
+            A long-term study would also be beneficial to assess how easily
+            students adapt to the multitouch shortcuts.
+          </h4>
+          <h5>
+            Please reach out to me at
+            <a
+              href="mailto:nive.mathan21@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >nive.mathan21@gmail.com</a
+            >
+            to discuss the case study in detail.
+          </h5>
+        </div>
+      </div>
+    </div>
+    <script>
+      function closeModal() {
+        window.open("../index.html", "_self");
+      }
+    </script>
   </body>
 </html>

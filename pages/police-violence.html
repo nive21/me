@@ -3,9 +3,181 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dhyana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="pages.css" />
+    <title>Data-driven storytelling</title>
   </head>
   <body>
-    Dhyana page
+    <div class="page-header">
+      <h2 class="title">Data-driven storytelling</h2>
+      <!-- Button to close the modal -->
+      <button class="close-button" onclick="closeModal()">
+        <svg
+          width="45"
+          height="45"
+          viewBox="0 0 45 45"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          __snippetScriptLoaded__="yes"
+        >
+          <path
+            d="M12 35.625L9.375 33L19.875 22.5L9.375 12L12 9.375L22.5 19.875L33 9.375L35.625 12L25.125 22.5L35.625 33L33 35.625L22.5 25.125L12 35.625Z"
+            fill="black"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="page-body">
+      <div class="intro">
+        <div class="intro-text">
+          <div>
+            <h5>Problem</h5>
+            <p>
+              The challenge was to create a scrollytelling website that
+              presented data on police violence in the US for my graduate class,
+              'Principles of Data Visualization'.
+            </p>
+          </div>
+          <br />
+          <div>
+            <h5>Results</h5>
+            <p>
+              Utilizing tools like Tableau, AfterEffects, and HTML/CSS, we
+              developed a website that narrated a story through insights
+              revealed and charts animated upon scrolling. The site also
+              featured an interactive data exploration tool, enabling users to
+              delve into the data and discover their own insights.
+            </p>
+          </div>
+        </div>
+        <img
+          class="intro-image"
+          src="../assets/images-on-pages/dataviz/cover.png"
+          alt="Description of the image"
+        />
+      </div>
+      <div class="key-text-section">
+        <h3>
+          The project was recognized as one of the top projects in the class
+          that year.
+        </h3>
+      </div>
+      <div class="sbs">
+        <h4>
+          We explored the data using Tableau and conducted literature review
+          before storyboarding various narration approaches.
+        </h4>
+        <div>
+          <h5>Problem Identification</h5>
+          <p>
+            Our initial major task was to select the most suitable
+            dataset—optimal in size and rich in significant, engaging stories.
+            After cleaning the dataset, we imported it into Tableau for
+            exploratory analysis to pinpoint key insights. Concurrently, a
+            literature review helped clarify these insights and identify
+            narratives that integrated with our story.
+          </p>
+        </div>
+      </div>
+      <div class="full-width-image">
+        <img
+          src="../assets/images-on-pages/dataviz/storyboard.png"
+          alt="Description of the image"
+        />
+        <h6>One of the storyboard options for the scrollytelling website.</h6>
+      </div>
+      <div class="sbs">
+        <div class="sbs-image">
+          <img
+            src="../assets/images-on-pages/dataviz/maps.png"
+            alt="Description of the image"
+          />
+          <h6>
+            An example of the evaluation of multiple iterations of a
+            visualization.
+          </h6>
+        </div>
+        <div>
+          <h5>Story Development</h5>
+          Our exploration of the data and subsequent literature review yielded
+          three key focal points:
+          <ul>
+            <li>
+              Magnitude: We compared the total number of cases in the US to
+              those in other countries, uncovering scholarly articles that
+              speculated on possible reasons for these disparities. We also
+              investigated correlations between the number of incidents, time,
+              geography, and the political climate.
+            </li>
+            <li>
+              Use of Weapon: Our analysis identified firearms as the predominant
+              weapon used both by police officers and alleged victims. Our
+              visualizations aimed to illustrate the impact of firearm
+              possession on police violence.
+            </li>
+            <li>
+              Racial Bias: We discovered that victims not carrying weapons were
+              predominantly from specific racial backgrounds. This finding was
+              supported by numerous research studies, and we incorporated
+              additional news articles about individual cases and their broader
+              implications.
+            </li>
+          </ul>
+          We storyboarded various narration approaches before deciding on a
+          sequence that began with an individual victim's story, expanded to
+          include international comparisons, and concluded with a comprehensive
+          data visualization for user interaction.
+        </div>
+      </div>
+      <div class="sbs">
+        <h4>
+          For each visualization, we considered multiple designs, assessing
+          their strengths and weaknesses before finalizing our choice for
+          development in Tableau.
+        </h4>
+      </div>
+      <div class="full-width-image">
+        <img
+          src="../assets/images-on-pages/dataviz/screenshots.png"
+          alt="Description of the image"
+        />
+        <h6>
+          Visualizations include bubble maps, bar charts, bubble charts, dot
+          plots, and correlation charts.
+        </h6>
+      </div>
+      <div class="key-text-section">
+        <div>
+          <h4>
+            Post-Tableau, I converted the visuals into .AI files, then animated
+            them in AfterEffects, and finally imported them as Lottie files that
+            activated on scroll. At the story's end, we integrated a Tableau
+            visualization for further data exploration.
+          </h4>
+          <h5>
+            Please reach out to me at
+            <a
+              href="mailto:nive.mathan21@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >nive.mathan21@gmail.com</a
+            >
+            to discuss the case study in detail.
+          </h5>
+        </div>
+      </div>
+    </div>
+    <script>
+      function closeModal() {
+        window.open("../index.html", "_self");
+      }
+    </script>
   </body>
 </html>
