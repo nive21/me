@@ -6,7 +6,7 @@ const projectNames = {
   TABLEAU: "Tableau",
   SCROLLY: "Dataviz scrollytelling",
   REDDIT: "Reddit study",
-  SPEAKER: "SMart speaker",
+  SPEAKER: "Smart speaker",
   FOOD: "Participation study",
 };
 
@@ -20,6 +20,18 @@ const projectPages = {
   [projectNames.REDDIT]: "pages/reddit-study.html",
   [projectNames.SPEAKER]: "pages/smart-speaker.html",
   [projectNames.FOOD]: "pages/participation-study.html",
+};
+
+const projectForces = {
+  [projectNames.CIRCLE]: 0.045,
+  [projectNames.JOU]: 0.045,
+  [projectNames.DHY]: 0.045,
+  [projectNames.UI]: 0.026,
+  [projectNames.TABLEAU]: 0.026,
+  [projectNames.SCROLLY]: 0.026,
+  [projectNames.REDDIT]: 0.018,
+  [projectNames.SPEAKER]: 0.018,
+  [projectNames.FOOD]: 0.018,
 };
 
 const projects = {
@@ -96,7 +108,7 @@ const projects = {
 
 // Reference: https://codepen.io/Zajno/pen/NWOLdOm
 window.addEventListener("load", async function () {
-  async function createSphere(containerElement, projectList, force) {
+  async function createSphere(containerElement, projectList) {
     // const projectInfo = [...projects.uxd, ...projects.dataViz, ...projects.uxr];
     const sW = containerElement.offsetWidth;
     const {
@@ -225,8 +237,10 @@ window.addEventListener("load", async function () {
     let isHovering = false;
 
     const jiggleObjects = () => {
+      console.log("stack ", stack);
       for (const item of stack) {
         if (!isHovering) {
+          const force = projectForces[item.label];
           // Apply a small random force to the box
           Body.applyForce(item, item.position, {
             x: (Math.random() - 0.5) * force, // Random x force
@@ -261,9 +275,9 @@ window.addEventListener("load", async function () {
     Runner.run(runner, engine);
   }
 
-  createSphere(document.querySelector("#sphere-uxd"), projects.uxd, 0.027);
-  createSphere(document.querySelector("#sphere-uxr"), projects.dataViz, 0.018);
-  createSphere(document.querySelector("#sphere-viz"), projects.uxr, 0.014);
+  createSphere(document.querySelector("#sphere-uxd"), projects.uxd);
+  createSphere(document.querySelector("#sphere-uxr"), projects.dataViz);
+  createSphere(document.querySelector("#sphere-viz"), projects.uxr);
 });
 
 // JavaScript to open the modal
