@@ -106,6 +106,10 @@ const projects = {
   ],
 };
 
+window.addEventListener("devicemotion", (event) => {
+  console.log(`${event.acceleration.x} m/s2`);
+});
+
 // Reference: https://codepen.io/Zajno/pen/NWOLdOm
 window.addEventListener("load", async function () {
   async function createSphere(containerElement, projectList) {
@@ -237,7 +241,6 @@ window.addEventListener("load", async function () {
     let isHovering = false;
 
     const jiggleObjects = () => {
-      console.log("stack ", stack);
       for (const item of stack) {
         if (!isHovering) {
           const force = projectForces[item.label];
