@@ -135,3 +135,62 @@ li {
 .key-text-section a {
   color: wheat;
 }
+
+.half-width {
+  max-width: 60vw;
+}
+
+.small-width {
+  max-width: 40vw;
+}
+
+@media (max-width: 1150px) {
+  h2 {
+    font-size: 4rem;
+    font-weight: 500;
+  }
+
+  h3 {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  h4 {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  h5 {
+    font-size: 1rem;
+    color: #3340f1;
+    font-weight: 400;
+    padding-bottom: 5px;
+  }
+
+  h6 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-style: italic;
+  }
+}
+
+@media (orientation: portrait) {
+  .intro,
+  .sbs {
+    flex-direction: column;
+  }
+
+  .title {
+    width: 80%;
+  }
+
+  .intro-image,
+  .sbs h4,
+  .sbs-image img,
+  .sbs-image h6,
+  .small-width,
+  .half-width {
+    width: 90vw;
+    max-width: 90vw;
+  }
+}

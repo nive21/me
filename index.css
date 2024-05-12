@@ -17,7 +17,7 @@
   --research-initial-angle: 65deg;
   --research-change-angle: -16deg;
   --font-color: #f6eddb;
-  --blue-color: #322796;
+  --blue-color: #3340f1;
 }
 
 * {
@@ -30,7 +30,7 @@
 body {
   height: 100vh;
   width: 100vw;
-  background: var(--blue-color);
+  background: #322796;
   background-image: url("assets/gradient2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -446,4 +446,80 @@ h2 {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+@media (max-width: 1440px) {
+  .intro-sub-text {
+    max-width: 36vw;
+  }
+}
+
+@media (max-width: 1150px) {
+  .intro-text {
+    font-size: 4rem;
+    letter-spacing: 0;
+  }
+
+  .intro-sub-text {
+    font-size: 1rem;
+    max-width: 50vw;
+  }
+
+  .inserted-text span {
+    font-size: 2rem;
+  }
+
+  #just-develop {
+    top: -2rem;
+  }
+
+  #research {
+    top: -6rem;
+    left: -10px;
+  }
+
+  .about-button {
+    font-size: 12px;
+  }
+
+  #intro {
+    width: 90vw;
+  }
+}
+
+@media (orientation: portrait) {
+  :root {
+    --bigDia: 50vw;
+  }
+
+  body {
+    overflow: auto;
+    height: calc(150vh);
+  }
+
+  .intro-sub-text {
+    max-width: 90vw;
+  }
+
+  #projects-container {
+    position: relative;
+    top: 50vh;
+    margin-bottom: 20px;
+  }
+
+  #intro {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --bigDia: 250px;
+    --smallDia: 140px;
+    --medRight: 180px;
+  }
+
+  .intro-text {
+    font-size: 3rem;
+  }
 }
