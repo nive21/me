@@ -524,7 +524,8 @@ h2 {
     --medRight: 180px;
   }
 
-  .intro-text {
+  .intro-text,
+  .about-title {
     font-size: 3rem;
   }
 }

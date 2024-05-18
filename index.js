@@ -106,10 +106,6 @@ const projects = {
   ],
 };
 
-window.addEventListener("devicemotion", (event) => {
-  console.log(`${event.acceleration.x} m/s2`);
-});
-
 // Reference: https://codepen.io/Zajno/pen/NWOLdOm
 window.addEventListener("load", async function () {
   async function createSphere(containerElement, projectList) {
