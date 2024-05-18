@@ -16,8 +16,10 @@
   --viz-change-angle: -10deg;
   --research-initial-angle: 65deg;
   --research-change-angle: -16deg;
-  --font-color: #f6eddb;
+  --font-color: #212121;
   --blue-color: #3340f1;
+  --light-blue: #49f9f0cb;
+  --cream-color: #f9f6f0;
 }
 
 * {
@@ -30,7 +32,7 @@
 body {
   height: 100vh;
   width: 100vw;
-  background: #322796;
+  background: var(--cream-color);
   background-image: url("assets/gradient2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -70,8 +72,8 @@ h2 {
   font-size: 3rem;
   line-height: 2.8rem;
   position: absolute;
-  background-color: #00000042;
-  color: #49f9ef;
+  background-color: var(--light-blue);
+  color: #212121;
 }
 
 .inserted-text span:nth-child(2) {
@@ -413,16 +415,19 @@ h2 {
 /* Styling for the button */
 .about-button {
   padding: 10px 20px;
-  background-color: #00000042; /* Blue color */
+  background-color: var(--light-blue); /* Blue color */
   color: var(--font-color);
-  border: 1px solid var(--font-color);
+  border: 1.5px solid var(--font-color);
   border-radius: 0px;
   cursor: pointer;
   letter-spacing: 0.1rem;
+  font-weight: 600;
+  box-shadow: -1px 2px #212121;
 }
 
 .about-button:hover {
-  background-color: #0000007a;
+  box-shadow: none;
+  translate: -1px 2px;
 }
 
 .close-button {

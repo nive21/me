@@ -1,11 +1,11 @@
 <svg width="67" height="60" viewBox="0 0 67 60" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_240_345)">
-<ellipse cx="32.5487" cy="37.5794" rx="25.3543" ry="17.6575" stroke="#F6EDDB" stroke-width="5" stroke-linejoin="round"/>
-<path d="M14.492 23.9964C13.6315 23.194 12.577 22.6169 11.3812 22.3583C7.4708 21.5127 3.52958 24.3934 2.57825 28.7926C1.76923 32.5338 3.38302 36.1683 6.28888 37.692" stroke="#F6EDDB" stroke-width="5" stroke-linejoin="round"/>
-<path d="M58.4679 38.2893C62.3783 37.4436 64.7771 33.1919 63.8258 28.7926C62.8745 24.3934 58.9333 21.5127 55.0228 22.3583C53.4152 22.7059 52.063 23.6293 51.0941 24.902" stroke="#F6EDDB" stroke-width="5" stroke-linejoin="round"/>
-<path d="M32.5486 19.4692L37.0761 6.79199L47.0368 9.05577" stroke="#F6EDDB" stroke-width="5" stroke-linejoin="round"/>
-<circle cx="52.4699" cy="10.8659" r="6.33858" stroke="#F6EDDB" stroke-width="5" stroke-linejoin="round"/>
-<path d="M23.0408 45.2754C26.361 47.3883 34.903 50.3463 42.5093 45.2754" stroke="#F6EDDB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="32.5487" cy="37.5794" rx="25.3543" ry="17.6575" stroke="#212121" stroke-width="5" stroke-linejoin="round"/>
+<path d="M14.492 23.9964C13.6315 23.194 12.577 22.6169 11.3812 22.3583C7.4708 21.5127 3.52958 24.3934 2.57825 28.7926C1.76923 32.5338 3.38302 36.1683 6.28888 37.692" stroke="#212121" stroke-width="5" stroke-linejoin="round"/>
+<path d="M58.4679 38.2893C62.3783 37.4436 64.7771 33.1919 63.8258 28.7926C62.8745 24.3934 58.9333 21.5127 55.0228 22.3583C53.4152 22.7059 52.063 23.6293 51.0941 24.902" stroke="#212121" stroke-width="5" stroke-linejoin="round"/>
+<path d="M32.5486 19.4692L37.0761 6.79199L47.0368 9.05577" stroke="#212121" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="52.4699" cy="10.8659" r="6.33858" stroke="#212121" stroke-width="5" stroke-linejoin="round"/>
+<path d="M23.0408 45.2754C26.361 47.3883 34.903 50.3463 42.5093 45.2754" stroke="#212121" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <defs>
 <clipPath id="clip0_240_345">
