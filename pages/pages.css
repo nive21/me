@@ -76,6 +76,13 @@ li {
   gap: 15px;
 }
 
+.bgd-highlight {
+  background: #3340f124;
+  padding: 20px;
+  box-sizing: content-box;
+  border-radius: 10px;
+}
+
 .intro-image {
   width: 50vw;
   object-fit: contain;
