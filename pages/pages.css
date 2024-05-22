@@ -118,6 +118,11 @@ li {
   background: none;
   border: none;
   cursor: pointer;
+  text-decoration: underline;
+}
+
+.close-button:hover {
+  text-decoration: none;
 }
 
 .key-text-section {
