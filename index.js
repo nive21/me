@@ -259,6 +259,7 @@ window.addEventListener("load", async function () {
       // Check if hovered for each item
       isHovering = stack.some((item) => {
         var mousePosition = event.mouse.position;
+        render.canvas.style.cursor = "pointer";
         return Bounds.contains(item.bounds, mousePosition);
       });
 
