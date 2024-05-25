@@ -98,6 +98,8 @@ let pageScrolled = false;
 
 const data = {
   [projectNames.CIRCLE]: {
+    title: "Social Balance through App Design",
+    keyText: `We developed high-fidelity functional prototypes and tested them.`,
     icon: "./assets/projects/CIRCLE.svg",
     highlightedIcon: "./assets/projects-highlighted/CIRCLE.svg",
     imageAlt: "Description 2",
@@ -110,14 +112,18 @@ const data = {
     bridge these gaps.`,
   },
   [projectNames.JOU]: {
+    title: "Designing for Efficiency",
+    keyText: "I led end-to-end B2B dashboard projects.",
     icon: "./assets/projects/JOU.svg",
     highlightedIcon: "./assets/projects-highlighted/JOU.svg",
     imageAlt: "Description 2",
     problemText: `This is an ongoing project where I am leading the UX initiatives for a
-          climate-focused startup. MY role includes UX research, design and frontend development of the user dashboard.`,
+          climate-focused startup. Here,  I lead full-stack projects from client interviews to dashboard designs and the implementation of those designs.`,
     resultsText: null,
   },
   [projectNames.DHY]: {
+    title: "Expanding the Market Reach of Dhyana",
+    keyText: "Our ring sales tripled times in one year.",
     icon: "./assets/projects/DHY.svg",
     highlightedIcon: "./assets/projects-highlighted/DHY.svg",
     imageAlt: "Description 1",
@@ -129,6 +135,9 @@ const data = {
     `,
   },
   [projectNames.UI]: {
+    title: "A multitouch interactive tool",
+    keyText: `Developed using JS,
+    the tool enables users to interact via pointers`,
     icon: "./assets/projects/UI.svg",
     highlightedIcon: "./assets/projects-highlighted/UI.svg",
     imageAlt: "Description 2",
@@ -143,6 +152,8 @@ const data = {
     interactions.`,
   },
   [projectNames.TABLEAU]: {
+    title: "Tracking sentiment shifts",
+    keyText: "I achieved the third place at the global competition.",
     icon: "./assets/projects/TABLEAU.svg",
     highlightedIcon: "./assets/projects-highlighted/TABLEAU.svg",
     imageAlt: "Description 2",
@@ -158,6 +169,9 @@ const data = {
     website: "https://nive21.github.io/data-driven-story/",
   },
   [projectNames.SCROLLY]: {
+    title: "Data-driven scrollytelling",
+    keyText: `The project was recognized as a top project in the class
+    that year.`,
     icon: "./assets/projects/SCROLLY.svg",
     highlightedIcon: "./assets/projects-highlighted/SCROLLY.svg",
     imageAlt: "Description 2",
@@ -171,6 +185,8 @@ const data = {
     delve into the data and discover their own insights.`,
   },
   [projectNames.REDDIT]: {
+    title: "Gun discourse on Reddit",
+    keyText: `The paper has been submitted to the CSCW 2024 conference.`,
     icon: "./assets/projects/REDDIT.svg",
     highlightedIcon: "./assets/projects-highlighted/REDDIT.svg",
     imageAlt: "Description 2",
@@ -183,6 +199,9 @@ const data = {
     currently undergoing review.`,
   },
   [projectNames.SPEAKER]: {
+    title: "Audio Stories to Remember the Departed",
+    keyText: `Our exploration led us to the potential of using audio stories to
+    memorialize the departed`,
     icon: "./assets/projects/SPEAKER.svg",
     highlightedIcon: "./assets/projects-highlighted/SPEAKER.svg",
     imageAlt: "Description 2",
@@ -197,6 +216,9 @@ const data = {
     resulted in several design implications.`,
   },
   [projectNames.FOOD]: {
+    title: "Designing Food Experiences",
+    keyText: `Based on insights gained from the five tasks,
+    I formulated three "how-might-we" insights.`,
     icon: "./assets/projects/FOOD.svg",
     highlightedIcon: "./assets/projects-highlighted/FOOD.svg",
     imageAlt: "Description 2",
@@ -218,18 +240,33 @@ function createProjectSection(project, projectName) {
   const card = document.createElement("div");
   card.className = "card";
 
+  const content = document.createElement("div");
+  content.className = "content-container";
+
+  const topContainer = document.createElement("div");
+  topContainer.className = "top-container";
+
+  const titleContainer = document.createElement("div");
+  titleContainer.className = "title-container";
+
   const img = document.createElement("img");
   img.src = project.highlightedIcon;
   img.alt = project.imageAlt;
 
-  const content = document.createElement("div");
-  content.className = "content-container";
+  const title = document.createElement("h1");
+  title.textContent = project?.title ?? "";
+
+  const contextContainer = document.createElement("div");
+  contextContainer.className = "context-container";
 
   const problemHeading = document.createElement("h3");
-  problemHeading.textContent = "Problem";
+  problemHeading.textContent = "Context";
 
   const problemText = document.createElement("p");
   problemText.textContent = project.problemText;
+
+  const keyText = document.createElement("h2");
+  keyText.textContent = project?.keyText ?? "";
 
   const projectPage = document.createElement("button");
   projectPage.className = "page-button";
@@ -238,32 +275,16 @@ function createProjectSection(project, projectName) {
     window.open(projectPages[projectName], "_blank");
   });
 
-  card.appendChild(img);
   card.appendChild(content);
-  content.appendChild(problemHeading);
-  content.appendChild(problemText);
-
-  if (project.resultsText) {
-    const resultsHeading = document.createElement("h3");
-    resultsHeading.textContent = "Results";
-
-    const resultsText = document.createElement("p");
-    resultsText.textContent = project.resultsText;
-
-    content.appendChild(resultsHeading);
-    content.appendChild(resultsText);
-  }
+  content.appendChild(topContainer);
+  topContainer.appendChild(titleContainer);
+  titleContainer.appendChild(img);
+  titleContainer.appendChild(title);
+  topContainer.appendChild(contextContainer);
+  contextContainer.appendChild(problemHeading);
+  contextContainer.appendChild(problemText);
+  contextContainer.appendChild(keyText);
   content.appendChild(projectPage);
-
-  // if (project.website) {
-  //   const website = document.createElement("button");
-  //   website.className = "page-button";
-  //   website.textContent = "VIEW WEBSITE";
-  //   website.addEventListener("click", () => {
-  //     window.open(project.website, "_blank");
-  //   });
-  //   content.appendChild(website);
-  // }
 
   section.appendChild(card);
 
@@ -383,7 +404,12 @@ async function createSphere(containerElement, projectList) {
   // Open details on a new page when clicked
   Events.on(mouseConstraint, "mousedown", (event) => {
     if (event?.source?.body?.label) {
-      window.open(projectPages[event.source.body.label], "_blank");
+      const projectIndex = Object.values(cardOpened).indexOf(
+        event.source.body.label
+      );
+      const yPosition = (projectIndex + 1) * window.innerHeight;
+      console.log("y ", yPosition);
+      window.scrollTo(0, yPosition);
     }
 
     // Manually trigger the end of the interaction
