@@ -205,8 +205,7 @@ const data = {
     icon: "./assets/projects/SPEAKER.svg",
     highlightedIcon: "./assets/projects-highlighted/SPEAKER.svg",
     imageAlt: "Description 2",
-    problemText: `For our capstone project in the graduate Human-Computer
-    Interaction class, our objective was to explore the problem and
+    problemText: `Our objective was to explore the problem and
     solution space around the theme ‘Remembering the Departed’. We
     gathered survey data and iterated on prototypes, evaluated them
     against a set of usability criteria, selected the most promising
