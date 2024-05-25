@@ -557,6 +557,10 @@ h2 {
   padding-top: 20px;
 }
 
+.down-arrow {
+  cursor: pointer;
+}
+
 @media (max-width: 1440px) {
   .intro-sub-text {
     max-width: 36vw;

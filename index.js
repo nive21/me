@@ -494,6 +494,10 @@ window.addEventListener("load", async function () {
 
 const arrowButton = document.getElementById("arrow");
 
+arrowButton.addEventListener("click", function (_) {
+  window.scrollTo(0, window.scrollY + window.innerHeight);
+});
+
 window.addEventListener(
   "scroll",
   function (_) {
