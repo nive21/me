@@ -99,6 +99,7 @@ let pageScrolled = false;
 const data = {
   [projectNames.CIRCLE]: {
     title: "Achieving Social Balance",
+    tags: ["Prototyping", "georgia tech"],
     keyText: `We developed high-fidelity functional prototypes and tested them.`,
     icon: "./assets/projects/CIRCLE.svg",
     sameSizeIcon: "./assets/projects-same-size/CIRCLE.svg",
@@ -112,6 +113,7 @@ const data = {
   },
   [projectNames.JOU]: {
     title: "Designing for Efficiency",
+    tags: ["B2B climate tech", "highest engagemner rate YTD"],
     keyText: "I led end-to-end B2B dashboard projects.",
     icon: "./assets/projects/JOU.svg",
     sameSizeIcon: "./assets/projects-same-size/JOU.svg",
@@ -122,6 +124,7 @@ const data = {
   },
   [projectNames.DHY]: {
     title: "Expanding the Market Reach",
+    tags: ["B2C wearable tech", "3x sales"],
     keyText: "Our ring sales tripled times in one year.",
     icon: "./assets/projects/DHY.svg",
     sameSizeIcon: "./assets/projects-same-size/DHY.svg",
@@ -136,6 +139,7 @@ const data = {
   },
   [projectNames.UI]: {
     title: "A multitouch interactive tool",
+    tags: ["dataviz", "georgia tech"],
     keyText: `Developed using JS,
     the tool enables users to interact via pointers`,
     icon: "./assets/projects/UI.svg",
@@ -152,6 +156,7 @@ const data = {
   },
   [projectNames.TABLEAU]: {
     title: "Tracking sentiment shifts",
+    tags: ["winning entry"],
     keyText: "I achieved the third place at the global competition.",
     icon: "./assets/projects/TABLEAU.svg",
     sameSizeIcon: "./assets/projects-same-size/TABLEAU.svg",
@@ -167,6 +172,7 @@ const data = {
   },
   [projectNames.SCROLLY]: {
     title: "Data-driven scrollytelling",
+    tags: ["a top class project"],
     keyText: `The project was recognized as a top project in the class
     that year.`,
     icon: "./assets/projects/SCROLLY.svg",
@@ -182,6 +188,7 @@ const data = {
   },
   [projectNames.REDDIT]: {
     title: "Gun discourse on Reddit",
+    tags: ["cscw 2024 submission"],
     keyText: `The paper has been submitted to the CSCW 2024 conference.`,
     icon: "./assets/projects/REDDIT.svg",
     sameSizeIcon: "./assets/projects-same-size/REDDIT.svg",
@@ -194,6 +201,7 @@ const data = {
   },
   [projectNames.SPEAKER]: {
     title: "Immersive Audio Stories",
+    tags: ["user testing", "georgia tech"],
     keyText: `Our exploration led us to the potential of using audio stories to
     memorialize the departed`,
     icon: "./assets/projects/SPEAKER.svg",
@@ -207,6 +215,7 @@ const data = {
   },
   [projectNames.FOOD]: {
     title: "Designing Food Experiences",
+    tags: ["participation study", "georgia tech"],
     keyText: `Based on insights gained from the five tasks,
     I formulated three "how-might-we" insights.`,
     icon: "./assets/projects/FOOD.svg",
@@ -234,6 +243,9 @@ function createProjectSection(projectName, smallProject = true) {
   const topContainer = document.createElement("div");
   topContainer.className = "top-container";
 
+  const tagsContainer = document.createElement("div");
+  tagsContainer.className = "tags-container";
+
   const titleContainer = document.createElement("div");
   titleContainer.className = "title-container";
 
@@ -257,6 +269,7 @@ function createProjectSection(projectName, smallProject = true) {
 
   card.appendChild(content);
   content.appendChild(topContainer);
+  topContainer.appendChild(tagsContainer);
   topContainer.appendChild(titleContainer);
   titleContainer.appendChild(img);
   titleContainer.appendChild(title);
@@ -271,6 +284,13 @@ function createProjectSection(projectName, smallProject = true) {
     mainImage.alt = projectName;
     card.appendChild(mainImage);
   }
+
+  (project?.tags ?? []).forEach((tag) => {
+    const tagChip = document.createElement("span");
+    tagChip.className = "tag";
+    tagChip.textContent = tag;
+    tagsContainer.appendChild(tagChip);
+  });
 
   return card;
 }
