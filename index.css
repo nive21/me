@@ -170,11 +170,6 @@ h2 {
   justify-content: space-between;
 }
 
-#top-bar button {
-  position: fixed;
-  right: 5vw;
-}
-
 #research {
   top: -8rem;
   left: -10px;
@@ -716,6 +711,13 @@ h2 {
   }
 }
 
+@media (orientation: landscape) {
+  #top-bar button {
+    position: fixed;
+    right: 5vw;
+  }
+}
+
 @media (orientation: portrait) {
   :root {
     --bigDia: 50vw;
@@ -727,7 +729,8 @@ h2 {
   }
 
   .intro-sub-text {
-    max-width: 60vw;
+    width: 90vw;
+    max-width: 90vw;
   }
 
   #projects {
