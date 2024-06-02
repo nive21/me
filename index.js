@@ -103,6 +103,7 @@ const data = {
     keyText: `We developed high-fidelity functional prototypes and tested them.`,
     icon: "./assets/projects/CIRCLE.svg",
     sameSizeIcon: "./assets/projects-same-size/CIRCLE.svg",
+    highlightedIcon: "./assets/projects-highlighted/CIRCLE.svg",
     imageAlt: "Description 2",
     problemText: `Our aim was to develop a solution to help introverts maintain a
     balance between social and personal well-being.`,
@@ -117,6 +118,7 @@ const data = {
     keyText: "I led end-to-end B2B dashboard projects.",
     icon: "./assets/projects/JOU.svg",
     sameSizeIcon: "./assets/projects-same-size/JOU.svg",
+    highlightedIcon: "./assets/projects-highlighted/JOU.svg",
     imageAlt: "Description 2",
     problemText: `This is an ongoing project where I am leading the UX initiatives for a
           climate-focused startup.`,
@@ -128,6 +130,7 @@ const data = {
     keyText: "Our ring sales tripled times in one year.",
     icon: "./assets/projects/DHY.svg",
     sameSizeIcon: "./assets/projects-same-size/DHY.svg",
+    highlightedIcon: "./assets/projects-highlighted/DHY.svg",
     imageAlt: "Description 1",
     problemText:
       "Our objective was to boost sales of our wearable by targeting a broader market.",
@@ -144,6 +147,7 @@ const data = {
     the tool enables users to interact via pointers`,
     icon: "./assets/projects/UI.svg",
     sameSizeIcon: "./assets/projects-same-size/UI.svg",
+    highlightedIcon: "./assets/projects-highlighted/UI.svg",
     imageAlt: "Description 2",
     problemText: `In this project, we aimed to introduce a tool for exploring
     multivariate data.`,
@@ -160,6 +164,7 @@ const data = {
     keyText: "I achieved the third place at the global competition.",
     icon: "./assets/projects/TABLEAU.svg",
     sameSizeIcon: "./assets/projects-same-size/TABLEAU.svg",
+    highlightedIcon: "./assets/projects-highlighted/TABLEAU.svg",
     imageAlt: "Description 2",
     problemText: `My winning entry to the Tableau 2021 Student Iron Viz competition to tell a story using music data.`,
     resultsText: `My data visualization secured third place among global entries.
@@ -177,6 +182,7 @@ const data = {
     that year.`,
     icon: "./assets/projects/SCROLLY.svg",
     sameSizeIcon: "./assets/projects-same-size/SCROLLY.svg",
+    highlightedIcon: "./assets/projects-highlighted/SCROLLY.svg",
     imageAlt: "Description 2",
     problemText: `The challenge was to create a scrollytelling website that
     presented data on police violence in the US.`,
@@ -192,6 +198,7 @@ const data = {
     keyText: `The paper has been submitted to the CSCW 2024 conference.`,
     icon: "./assets/projects/REDDIT.svg",
     sameSizeIcon: "./assets/projects-same-size/REDDIT.svg",
+    highlightedIcon: "./assets/projects-highlighted/REDDIT.svg",
     imageAlt: "Description 2",
     problemText: `Our goal was to understand the
     motivations and impact of online conversations on guns.`,
@@ -206,6 +213,7 @@ const data = {
     memorialize the departed`,
     icon: "./assets/projects/SPEAKER.svg",
     sameSizeIcon: "./assets/projects-same-size/SPEAKER.svg",
+    highlightedIcon: "./assets/projects-highlighted/SPEAKER.svg",
     imageAlt: "Description 2",
     problemText: `Our objective was to explore the problem and
     solution space around the theme ‘Remembering the Departed’.`,
@@ -220,6 +228,7 @@ const data = {
     I formulated three "how-might-we" insights.`,
     icon: "./assets/projects/FOOD.svg",
     sameSizeIcon: "./assets/projects-same-size/FOOD.svg",
+    highlightedIcon: "./assets/projects-highlighted/FOOD.svg",
     imageAlt: "Description 2",
     problemText: `My aim was to explore how
     we could design food experiences for students through a participation study.`,
@@ -304,6 +313,25 @@ function createSideBySideProjects(project1, project2) {
 
   return section;
 }
+
+const tooltips = document.getElementsByClassName("object-tooltip");
+const b2c = document.getElementById("b2c-trigger");
+const dataviz = document.getElementById("dataviz-trigger");
+const ur = document.getElementById("ur-trigger");
+const joulea = document.getElementById("joulea-trigger");
+const b2cTooltip = document.getElementById("b2c-object-tooltip");
+const datavizTooltip = document.getElementById("dataviz-object-tooltip");
+const urTooltip = document.getElementById("ur-object-tooltip");
+
+window.onmousemove = function (e) {
+  const x = e.clientX,
+    y = e.clientY + window.scrollY;
+
+  for (const tooltip of tooltips) {
+    tooltip.style.top = y + 20 + "px";
+    tooltip.style.left = x - 120 + "px";
+  }
+};
 
 async function createSphere(containerElement, projectList) {
   const sW = containerElement.offsetWidth;
@@ -465,6 +493,37 @@ async function createSphere(containerElement, projectList) {
       return Bounds.contains(item.bounds, mousePosition);
     });
 
+    stack.forEach((item) => {
+      const mousePosition = event.mouse.position;
+
+      if (Bounds.contains(item.bounds, mousePosition)) {
+        if (item.label === projectNames.DHY) {
+          b2cTooltip.style.visibility = "visible";
+        } else {
+          b2cTooltip.style.visibility = "hidden";
+        }
+        if (item.label === projectNames.TABLEAU) {
+          datavizTooltip.style.visibility = "visible";
+        } else {
+          datavizTooltip.style.visibility = "hidden";
+        }
+        if (item.label === projectNames.REDDIT) {
+          urTooltip.style.visibility = "visible";
+        } else {
+          urTooltip.style.visibility = "hidden";
+        }
+
+        // TODO: get this to work
+        // item.render.sprite.texture = data?.[item.label]?.highlightedIcon;
+      }
+    });
+
+    if (!isHovering) {
+      b2cTooltip.style.visibility = "hidden";
+      datavizTooltip.style.visibility = "hidden";
+      urTooltip.style.visibility = "hidden";
+    }
+
     jiggleObjects();
   });
 
@@ -478,13 +537,36 @@ async function createSphere(containerElement, projectList) {
 
   (function render() {
     // Check the scroll condition
-    if (pageScrolled) {
-      for (const [index, item] of stack.entries()) {
-        if (item.label === currentlyOpenCard) {
-          item.render.sprite.texture = data?.[item.label]?.sameSizeIcon;
-        } else {
-          item.render.sprite.texture = data?.[item.label]?.icon;
-        }
+    for (const [_, item] of stack.entries()) {
+      if (b2c.classList?.length === 2 && item.label === projectNames.DHY) {
+        item.render.sprite.texture = data?.[item.label]?.highlightedIcon;
+        break;
+      } else {
+        item.render.sprite.texture = data?.[item.label]?.icon;
+      }
+
+      if (ur.classList?.length === 2 && item.label === projectNames.REDDIT) {
+        item.render.sprite.texture = data?.[item.label]?.highlightedIcon;
+        break;
+      } else {
+        item.render.sprite.texture = data?.[item.label]?.icon;
+      }
+
+      if (
+        dataviz.classList?.length === 2 &&
+        item.label === projectNames.TABLEAU
+      ) {
+        item.render.sprite.texture = data?.[item.label]?.highlightedIcon;
+        break;
+      } else {
+        item.render.sprite.texture = data?.[item.label]?.icon;
+      }
+
+      if (joulea.classList?.length === 2 && item.label === projectNames.JOU) {
+        item.render.sprite.texture = data?.[item.label]?.highlightedIcon;
+        break;
+      } else {
+        item.render.sprite.texture = data?.[item.label]?.icon;
       }
     }
 
