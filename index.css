@@ -18,14 +18,14 @@
   --research-change-angle: -16deg;
   --font-color: #212121;
   --blue-color: #3340f1;
-  --light-blue: #49f9f0cb;
+  --light-blue: #3340f1;
   --cream-color: #f9f6f0;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "Bricolage Grotesque", sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--font-color);
 }
 
@@ -41,7 +41,7 @@ body {
 }
 
 .bgd-image {
-  background-image: url("assets/gradient2.jpg");
+  /* background-image: url("assets/gradient2.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -61,20 +61,11 @@ h2 {
 .page-button {
   background: none;
   border: none;
-  cursor: pointer;
   text-transform: uppercase;
   font-size: 0.9rem;
-  letter-spacing: 0.1rem;
-  padding: 12px 20px;
-  border: 3px solid #212121;
-  border-radius: 4px;
+  padding: 12px 0px;
   font-weight: 600;
-  box-shadow: -1px 2px #212121;
-}
-
-.page-button:hover {
-  box-shadow: none;
-  translate: -1px 2px;
+  color: var(--blue-color);
 }
 
 #intro {
@@ -104,7 +95,7 @@ h2 {
   line-height: 2.8rem;
   position: absolute;
   background-color: var(--light-blue);
-  color: #212121;
+  color: var(--cream-color);
 }
 
 .inserted-text span:nth-child(2) {
@@ -146,6 +137,7 @@ h2 {
 .intro-sub-text {
   font-size: 1.2rem;
   margin-top: 2rem;
+  width: 40vw;
 }
 
 #wrapper {
@@ -454,13 +446,13 @@ h2 {
 /* Styling for the button */
 .about-button {
   padding: 10px 20px;
-  background-color: var(--light-blue); /* Blue color */
-  color: var(--font-color);
-  border: 1.5px solid var(--font-color);
+  background-color: var(--cream-color); /* Blue color */
+  color: var(--blue-color);
+  border: 2px solid var(--blue-color);
   cursor: pointer;
   letter-spacing: 0.1rem;
   font-weight: 600;
-  box-shadow: -1px 2px #212121;
+  box-shadow: -1px 2px var(--blue-color);
   border-radius: 4px;
 }
 
@@ -492,6 +484,10 @@ h2 {
   gap: 10px;
 }
 
+.projects-list {
+  margin-bottom: 60px;
+}
+
 .section {
   height: max-content;
   min-height: 100vh;
@@ -500,22 +496,50 @@ h2 {
   display: flex;
 }
 
+.sbs-section {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-left: 5vw;
+  margin-bottom: 20px;
+}
+
 .card {
   border: 4px solid var(--font-color);
   border-radius: 12px;
-  background-color: #f6eddb54;
-  width: 40vw;
-  min-width: 300px;
-  height: 70vh;
-  min-height: 300px;
-  max-height: 500px;
-  margin: auto 0 auto 5vw;
+  /* background-color: #ffffff; */
+  box-shadow: -1px 2px var(--font-color);
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 
-.card img {
-  width: 120px;
+.card:hover {
+  box-shadow: none;
+  translate: -1px 2px;
+}
+
+.card-large {
+  width: calc(40vw + 28px);
+  margin-left: 5vw;
+  margin-bottom: 20px;
+}
+
+.card-small {
+  width: 20vw;
+}
+
+.card-icon {
+  height: 50px;
+  padding: 20px;
+  padding-left: 0;
+}
+
+.main-img {
+  width: calc(20vw - 20px);
+  object-fit: cover;
+  margin: 20px;
+  border-radius: 4px;
 }
 
 .content-container {
@@ -523,10 +547,11 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: start;
 }
 
 .content-container h1 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
@@ -545,7 +570,7 @@ h2 {
 }
 
 .content-container button {
-  width: 200px;
+  /* width: 200px; */
 }
 
 .title-container {
@@ -555,7 +580,7 @@ h2 {
 }
 
 .context-container {
-  padding-top: 20px;
+  /* padding-top: 20px; */
 }
 
 .down-arrow {
@@ -565,6 +590,12 @@ h2 {
 @media (max-width: 1440px) {
   .intro-sub-text {
     max-width: 36vw;
+  }
+}
+
+@media (max-width: 1280px) {
+  :root {
+    --bigDia: 35vh;
   }
 }
 
@@ -645,8 +676,16 @@ h2 {
     height: 80vh;
   }
 
-  .card {
-    width: 60vw;
+  .card-large {
+    width: 90vw;
+  }
+
+  .card-small {
+    width: calc(45vw - 14px);
+  }
+
+  .main-img {
+    width: calc(45vw - 28px);
   }
 }
 
@@ -662,8 +701,24 @@ h2 {
     font-size: 3rem;
   }
 
-  .card img {
-    width: 70px;
+  .sbs-section {
+    flex-direction: column;
+  }
+
+  .card-small {
+    width: 90vw;
+  }
+
+  .main-img {
+    width: calc(90vw - 40px);
+  }
+
+  .card-icon {
+    height: 50px;
+  }
+
+  .card-large {
+    flex-direction: column;
   }
 }
 
@@ -681,10 +736,14 @@ h2 {
 
 .down-arrow {
   position: fixed;
-  top: calc(100vh - 80px);
-  left: calc(50% - 14px);
+  top: calc(100vh - 120px);
+  left: 5vw;
   width: 0;
-  height: 30px;
+}
+
+.down-arrow img {
+  margin-top: 30px;
+  width: 30px;
 }
 
 .hide-arrow {
