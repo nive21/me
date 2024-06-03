@@ -37,15 +37,15 @@ const projectForces = {
 const projects = {
   uxd: [
     {
+      projectName: projectNames.DHY,
+      size: 45,
+    },
+    {
       projectName: projectNames.CIRCLE,
       size: 45,
     },
     {
       projectName: projectNames.JOU,
-      size: 45,
-    },
-    {
-      projectName: projectNames.DHY,
       size: 45,
     },
   ],
@@ -519,6 +519,7 @@ async function createSphere(containerElement, projectList) {
     });
 
     if (!isHovering) {
+      currentlyHoveredObject = null;
       b2cTooltip.style.visibility = "hidden";
       datavizTooltip.style.visibility = "hidden";
       urTooltip.style.visibility = "hidden";
