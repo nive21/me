@@ -95,6 +95,7 @@ const totalProjects = Object.values(cardOpened)?.length;
 
 let currentlyOpenCard = null;
 let pageScrolled = false;
+let currentlyHoveredObject = null;
 
 const data = {
   [projectNames.CIRCLE]: {
@@ -497,6 +498,8 @@ async function createSphere(containerElement, projectList) {
       const mousePosition = event.mouse.position;
 
       if (Bounds.contains(item.bounds, mousePosition)) {
+        currentlyHoveredObject = item.label;
+
         if (item.label === projectNames.DHY) {
           b2cTooltip.style.visibility = "visible";
         } else {
@@ -512,9 +515,6 @@ async function createSphere(containerElement, projectList) {
         } else {
           urTooltip.style.visibility = "hidden";
         }
-
-        // TODO: get this to work
-        // item.render.sprite.texture = data?.[item.label]?.highlightedIcon;
       }
     });
 
@@ -536,7 +536,6 @@ async function createSphere(containerElement, projectList) {
   Runner.run(runner, engine);
 
   (function render() {
-    // Check the scroll condition
     for (const [_, item] of stack.entries()) {
       if (b2c.classList?.length === 2 && item.label === projectNames.DHY) {
         item.render.sprite.texture = data?.[item.label]?.highlightedIcon;
@@ -565,6 +564,12 @@ async function createSphere(containerElement, projectList) {
       if (joulea.classList?.length === 2 && item.label === projectNames.JOU) {
         item.render.sprite.texture = data?.[item.label]?.highlightedIcon;
         break;
+      } else {
+        item.render.sprite.texture = data?.[item.label]?.icon;
+      }
+
+      if (currentlyHoveredObject === item.label) {
+        item.render.sprite.texture = data?.[item.label]?.highlightedIcon;
       } else {
         item.render.sprite.texture = data?.[item.label]?.icon;
       }
