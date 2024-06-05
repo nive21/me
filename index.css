@@ -200,6 +200,7 @@ h2 {
 
 #insert-symbol span {
   background-color: #ffffff00;
+  color: var(--blue-color);
 }
 
 #develop {
