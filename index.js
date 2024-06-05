@@ -161,13 +161,13 @@ const data = {
   },
   [projectNames.TABLEAU]: {
     title: "Tracking sentiment shifts",
-    tags: ["winning entry"],
+    tags: ["global competition"],
     keyText: "I achieved the third place at the global competition.",
     icon: "./assets/projects/TABLEAU.svg",
     sameSizeIcon: "./assets/projects-same-size/TABLEAU.svg",
     highlightedIcon: "./assets/projects-highlighted/TABLEAU.svg",
     imageAlt: "Description 2",
-    problemText: `My winning entry to the Tableau 2021 Student Iron Viz competition to tell a story using music data.`,
+    problemText: `The third place entry to the Tableau 2021 Student Iron Viz competition to tell a story using music data.`,
     resultsText: `My data visualization secured third place among global entries.
     Utilizing Spotify metrics, Billboard songs, lyric keywords, and
     the NRCLex library, I crafted a dashboard that illustrated the
