@@ -611,21 +611,6 @@ arrowButton.addEventListener("click", function (_) {
 window.addEventListener(
   "scroll",
   function (_) {
-    // const cardNum = this.scrollY / this.window.innerHeight;
-    // const cardIndex = Math.floor(cardNum);
-
-    // if (currentlyOpenCard !== cardOpened[cardIndex]) {
-    //   pageScrolled = true;
-    //   currentlyOpenCard = cardOpened[cardIndex];
-
-    //   if (cardIndex === totalProjects) {
-    //     arrowButton.className = "hide-arrow";
-    //   } else {
-    //     arrowButton.classList.remove("hide-arrow");
-    //   }
-    // } else {
-    //   pageScrolled = false;
-    // }
     if (this.scrollY > 50) {
       arrowButton.className = "hide-arrow";
     } else {
@@ -635,12 +620,7 @@ window.addEventListener(
   false
 );
 
-// JavaScript to open the modal
-function openModal() {
-  document.getElementById("modalOverlay").style.display = "block";
-}
-
-// JavaScript to close the modal
-function closeModal() {
-  document.getElementById("modalOverlay").style.display = "none";
+// JavaScript to open the footer section
+function openSection() {
+  document.getElementById("footer").scrollIntoView();
 }

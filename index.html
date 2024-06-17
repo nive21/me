@@ -44,108 +44,7 @@
         <p>
           <span style="font-weight: 600">Nivedhitha</span><br />Mathan Kumar
         </p>
-        <button class="about-button" onclick="openModal()">ABOUT ME</button>
-      </div>
-      <!-- The modal overlay -->
-      <div class="modal-overlay" id="modalOverlay">
-        <!-- Modal content -->
-        <div class="modal-container">
-          <div class="modal-header">
-            <h2 class="about-title">Hey there!</h2>
-            <!-- Button to close the modal -->
-            <button class="close-button" onclick="closeModal()">
-              <svg
-                width="45"
-                height="45"
-                viewBox="0 0 45 45"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                __snippetScriptLoaded__="yes"
-              >
-                <path
-                  d="M12 35.625L9.375 33L19.875 22.5L9.375 12L12 9.375L22.5 19.875L33 9.375L35.625 12L25.125 22.5L35.625 33L33 35.625L22.5 25.125L12 35.625Z"
-                  fill="black"
-                />
-              </svg>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="about-intro">
-              <p class="about-intro-text">
-                I'm Nivedhitha, a UX designer residing in Atlanta. With a
-                background in architectural design, I've always enjoyed creating
-                experiences. Transitioning into experience design allowed me to
-                expand beyond physical spaces and continually refine my work.
-                <br /><br />My journey took me to Avantari, where our team
-                achieved a 3x increase in sales within a year. Seeking further
-                growth, I pursued higher education in the US, graduating from
-                Georgia Tech with a Masters in Computer Science specializing in
-                Human-Computer Interaction (HCI). Post-graduation, I joined a
-                climate-startup where I had the opportunity to both design and
-                build experiences!<br /><br />From these experiences, I have
-                realized that I enjoy taking up challenges and am on the lookout
-                for more. Please do reach out if you have any or if you want to
-                say hi!
-              </p>
-            </div>
-            <div class="contact">
-              <div class="about-contact">
-                <img
-                  src="assets/misc/call.svg"
-                  alt="Description of the image"
-                />
-                +1 (678) 800-8242
-              </div>
-              <div class="about-contact">
-                <img
-                  src="assets/misc/mail.svg"
-                  alt="Description of the image"
-                />
-                <a
-                  href="mailto:nive.mathan21@gmail.com"
-                  target="_blank"
-                  style="color: #3340f1"
-                  >nive.mathan21@gmail.com</a
-                >
-              </div>
-            </div>
-            <div class="my-sketches">
-              <div class="sketch">
-                <img
-                  src="assets/sketches/cat_in_a_bar.jpg"
-                  alt="Description of the image"
-                />
-              </div>
-              <div class="sketch">
-                <img
-                  src="assets/sketches/giraffe_nivedhitha.jpg"
-                  alt="Description of the image"
-                />
-              </div>
-              <div class="sketch">
-                <img
-                  src="assets/sketches/snail_nivedhitha.jpg"
-                  alt="Description of the image"
-                />
-              </div>
-              <div class="sketch">
-                <img
-                  src="assets/sketches/portrait_nivedhitha.jpg"
-                  alt="Description of the image"
-                />
-              </div>
-              <div class="sketch">
-                <img
-                  src="assets/sketches/pup_nivedhitha.jpg"
-                  alt="Description of the image"
-                />
-              </div>
-            </div>
-            <p class="sketches-description">
-              Some of my pen and ink illustrations — a meditative pasttime!
-            </p>
-          </div>
-        </div>
+        <button class="about-button" onclick="openSection()">ABOUT ME</button>
       </div>
       <div id="intro-container">
         <div id="intro">
@@ -266,11 +165,119 @@
       </div>
     </div>
     <div class="projects-list"></div>
-    <!-- TODO: Add zoom ability to about images -->
-    <!-- <script src="https://unpkg.com/medium-zoom/dist/medium-zoom.min.js"></script>
-    <script>
-      mediumZoom(".sketch img");
-    </script> -->
+    <footer id="footer">
+      <div class="introduction">
+        <div class="introduction-content">
+          <h3>My story</h3>
+          <p>
+            I love creating and iterating!<br /><br />With over 3 years of
+            experience in early-stage startups, I’ve had the opportunity to
+            build many ideas. I enjoy seeing ideas grow, improve, capture
+            attention, and be loved by users. I find it incredibly rewarding and
+            am passionate about doing whatever it takes to help projects
+            succeed—whether it's front-end development, 3D rendering, or social
+            media marketing. My efforts have led to tangible improvements, from
+            a 3x increase in sales to achieving the highest social media
+            engagement rate YTD. <br /><br />Here's a snapshot of my life since
+            I graduated:
+          </p>
+        </div>
+        <div class="sketches"></div>
+      </div>
+      <section class="timeline">
+        <ol>
+          <li>
+            <div>
+              <time>May 2018</time>
+              <p>Graduated from IIT KGP!</p>
+              It was during my Bachelors in Architectural Design that I was
+              trained in designing experiences! I was also introduced to HCI
+              then through the Coursera specialization 'Interaction Design' by
+              UC San Diego.
+            </div>
+          </li>
+          <li>
+            <div>
+              <time>Jun 2018</time>
+              <p>Design Associate at Livspace</p>
+              Here, I got to talk to clients to develop interior design and
+              architectural designs for more than 10 projects.
+            </div>
+          </li>
+          <li>
+            <div>
+              <time>Dec 2019</time>
+              <p>UX Designer at Avantari</p>
+              At Avantari, I worked on the application interface and product
+              website of the smart ring, Dhyana. I interviewed users and tracked
+              analytics to drive improvements, contributing to a boosted user
+              base and tripled sales in a year.
+            </div>
+          </li>
+          <li>
+            <div>
+              <time>Aug 2021</time>
+              <p>Masters' program at GT!</p>
+              I joined the MS program in Computer Science at Georgia Tech.
+              Specializing in Human-Computer Interaction, I took courses on Data
+              Visualization, Cognitive Science, and Online Communities.
+            </div>
+          </li>
+          <li>
+            <div>
+              <time>Nov 2021</time>
+              <p>Recognized by Google Play</p>
+              Sortizy, a meal-planning app for which I co-designed the UI, was
+              identified as one of the Best of 2021 in India by Google Play.
+            </div>
+          </li>
+          <li>
+            <div>
+              <time>May 2022</time>
+              <p>Third place in Student Ironviz</p>
+              My entry for Tableau's global competition was recognized at their
+              annual conference in Las Vegas.
+            </div>
+          </li>
+          <li>
+            <div>
+              <time>Feb 2023</time>
+              <p>UX Designer at Joulea</p>
+              At Joulea, a B2B climate-tech company, I work on the design and
+              front-end development of the user dashboards. I interviewed pilot
+              clients to develop user personas, define product requirements,
+              design dashboards, and craft design guidelines / messaging
+              framework.
+            </div>
+          </li>
+        </ol>
+      </section>
+    </footer>
+    <div class="contact">
+      <h3>Reach out!</h3>
+      <div class="about-contact">
+        <img src="assets/misc/call.svg" alt="Description of the image" />
+        +1 (678) 800-8242
+      </div>
+      <div class="about-contact">
+        <img src="assets/misc/mail.svg" alt="Description of the image" />
+        <a
+          href="mailto:nive.mathan21@gmail.com"
+          target="_blank"
+          style="color: #3340f1"
+          >nive.mathan21@gmail.com</a
+        >
+      </div>
+      <div class="about-contact">
+        <img src="assets/misc/linkedin.svg" alt="Description of the image" />
+        <a
+          href="https://www.linkedin.com/in/nivemathan"
+          target="_blank"
+          style="color: #3340f1"
+          >LinkedIn profile</a
+        >
+      </div>
+    </div>
     <script>
       function onChipHover(tooltipId, isHovering) {
         const ele = document.getElementById(tooltipId);
