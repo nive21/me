@@ -545,9 +545,15 @@ h2 {
 .contact {
   background-color: var(--cream-color);
   margin: 0 5vw;
-  padding: 40px 0;
+  padding: 60px 0 80px;
   position: relative;
   z-index: 5;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact .right {
+  margin-top: 20px;
 }
 
 .about-contact {
@@ -862,6 +868,11 @@ h3 {
 
   .sbs-section {
     margin-left: 5vw;
+  }
+
+  .contact {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
