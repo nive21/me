@@ -1,15 +1,8 @@
 <svg width="68" height="60" viewBox="0 0 68 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_500_1892)">
-<ellipse cx="32.5487" cy="37.5794" rx="25.3543" ry="17.6575" stroke="#212121" stroke-width="5" stroke-linejoin="round"/>
-<path d="M14.492 23.9955C13.6315 23.193 12.577 22.6159 11.3812 22.3573C7.4708 21.5117 3.52958 24.3924 2.57825 28.7917C1.76923 32.5328 3.38302 36.1673 6.28888 37.691" stroke="#212121" stroke-width="5" stroke-linejoin="round"/>
-<path d="M58.4678 38.2883C62.3782 37.4427 64.777 33.1909 63.8257 28.7917C62.8744 24.3924 58.9331 21.5117 55.0227 22.3573C53.4151 22.705 52.0629 23.6283 51.094 24.901" stroke="#212121" stroke-width="5" stroke-linejoin="round"/>
-<path d="M32.5487 19.4682L37.0763 6.79102L47.0369 9.0548" stroke="#212121" stroke-width="5" stroke-linejoin="round"/>
-<circle cx="52.4699" cy="10.8659" r="6.33858" stroke="#212121" stroke-width="5" stroke-linejoin="round"/>
-<path d="M23.0408 45.2754C26.361 47.3883 34.903 50.3463 42.5093 45.2754" stroke="#212121" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-<defs>
-<clipPath id="clip0_500_1892">
-<rect width="67.2727" height="60" fill="white"/>
-</clipPath>
-</defs>
+<ellipse cx="32.5487" cy="37.5794" rx="25.3543" ry="17.6575" stroke="#212121" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M14.492 23.9955C13.6315 23.193 12.577 22.6159 11.3812 22.3573C7.4708 21.5117 3.52958 24.3924 2.57825 28.7917C1.76923 32.5328 3.38302 36.1673 6.28888 37.691" stroke="#212121" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M58.4678 38.2883C62.3782 37.4427 64.777 33.1909 63.8257 28.7917C62.8744 24.3924 58.9331 21.5117 55.0227 22.3573C53.4151 22.705 52.0629 23.6283 51.094 24.901" stroke="#212121" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M32.5487 19.4682L37.0763 6.79102L47.0369 9.0548" stroke="#212121" stroke-width="2.5" stroke-linejoin="round"/>
+<circle cx="52.4699" cy="10.8659" r="6.33858" stroke="#212121" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M23.0408 45.2754C26.361 47.3883 34.903 50.3463 42.5093 45.2754" stroke="#212121" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

@@ -143,7 +143,7 @@ async function createSphere(containerElement, projectList) {
       render: {
         fillStyle: "#FFFFFF40",
         strokeStyle: "white",
-        lineWidth: 4,
+        lineWidth: 1,
         sprite: {
           texture: data?.[project.projectName]?.icon,
         },
@@ -195,7 +195,7 @@ async function createSphere(containerElement, projectList) {
           render: {
             fillStyle: "transparent",
             strokeStyle: "transparent",
-            lineWidth: 0,
+            lineWidth: 2,
           },
         },
       });
