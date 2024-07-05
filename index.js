@@ -9,7 +9,7 @@ import {
 let currentlyHoveredObject = null;
 
 // Function to create a project section
-function createProjectSection(projectName, smallProject = true) {
+function createProjectSection(projectName, smallProject = false) {
   const project = data[projectName];
   const card = document.createElement("div");
   card.className = `card ${smallProject ? "card-small" : "card-large"}`;
@@ -79,8 +79,8 @@ function createSideBySideProjects(project1, project2) {
   const section = document.createElement("div");
   section.className = "sbs-section";
 
-  section.appendChild(createProjectSection(project1));
-  section.appendChild(createProjectSection(project2));
+  section.appendChild(createProjectSection(project1, true));
+  section.appendChild(createProjectSection(project2, true));
 
   return section;
 }
@@ -351,6 +351,16 @@ async function createSphere(containerElement, projectList) {
   })();
 }
 
+function createSideBySideSections(left, right) {
+  const superSection = document.createElement("div");
+  superSection.className = "sbs-super-section";
+
+  superSection.appendChild(left);
+  superSection.appendChild(right);
+
+  return superSection;
+}
+
 // Reference: https://codepen.io/Zajno/pen/NWOLdOm
 window.addEventListener("load", async function () {
   createSphere(document.querySelector("#sphere-uxd"), projects.uxd);
@@ -360,16 +370,23 @@ window.addEventListener("load", async function () {
   // The project list container
   const projectsList = document.querySelector(".projects-list");
 
-  projectsList.appendChild(createProjectSection(projectNames.DHY, false));
   projectsList.appendChild(
-    createSideBySideProjects(projectNames.SCROLLY, projectNames.REDDIT)
-  );
-  projectsList.appendChild(createProjectSection(projectNames.TABLEAU, false));
-  projectsList.appendChild(
-    createSideBySideProjects(projectNames.CIRCLE, projectNames.SPEAKER)
+    createSideBySideSections(
+      createProjectSection(projectNames.DHY),
+      createProjectSection(projectNames.SCROLLY)
+    )
   );
   projectsList.appendChild(
-    createSideBySideProjects(projectNames.UI, projectNames.FOOD)
+    createSideBySideSections(
+      createProjectSection(projectNames.TABLEAU),
+      createSideBySideProjects(projectNames.REDDIT, projectNames.SPEAKER)
+    )
+  );
+  projectsList.appendChild(
+    createSideBySideSections(
+      createSideBySideProjects(projectNames.UI, projectNames.FOOD),
+      createProjectSection(projectNames.CIRCLE)
+    )
   );
 });
 
@@ -390,8 +407,3 @@ window.addEventListener(
   },
   false
 );
-
-// JavaScript to open the footer section
-function openSection() {
-  document.getElementById("footer").scrollIntoView();
-}

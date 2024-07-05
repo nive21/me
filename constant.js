@@ -94,6 +94,7 @@ export const data = {
       conducted user testing. The feedback we received same-size
       discrepancies in users' mental models, and we devised solutions to
       bridge these gaps.`,
+    mainImage: "./assets/images-on-pages/social-circle/cover.png",
   },
   [projectNames.JOU]: {
     title: "Designing for Efficiency",
@@ -174,6 +175,7 @@ export const data = {
       revealed and charts animated upon scrolling. The site also
       featured an interactive data exploration tool, enabling users to
       delve into the data and discover their own insights.`,
+    mainImage: "./assets/images-on-pages/dataviz/cover.png",
   },
   [projectNames.REDDIT]: {
     title: "Gun discourse on Reddit",
