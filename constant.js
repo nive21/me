@@ -111,7 +111,7 @@ export const data = {
   [projectNames.DHY]: {
     title: "Expanding the Market Reach",
     tags: ["B2C wearable tech", "3x sales"],
-    keyText: "Our ring sales tripled times in one year.",
+    keyText: "Our ring sales tripled in one year.",
     icon: "./assets/projects/DHY.svg",
     sameSizeIcon: "./assets/projects-same-size/DHY.svg",
     highlightedIcon: "./assets/projects-highlighted/DHY.svg",
