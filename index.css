@@ -57,11 +57,24 @@ h3 {
   font-family: "ClashDisplay-Medium", sans-serif;
 }
 
+.bgd-gradients {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.bgd-gradients svg {
+  filter: blur(300px);
+}
+
+.top-gradient {
+  margin-left: 20vw;
+  position: relative;
+  top: -60px;
+}
+
 .bgd-image {
-  /* background-image: url("assets/gradient2.jpg"); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -596,8 +609,9 @@ h2 {
 .card {
   /* border: 2.5px solid var(--font-color); */
   border-radius: 12px;
-  background-color: #f0f0ee;
+  background-color: #f0f0eea9;
   box-shadow: -2px 2px #979797;
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -782,11 +796,6 @@ footer {
 }
 
 @media (max-width: 1150px) {
-  .intro-text {
-    font-size: 4rem;
-    letter-spacing: 0;
-  }
-
   .intro-sub-text {
     font-size: 1rem;
     max-width: 50vw;
@@ -814,7 +823,7 @@ footer {
   }
 
   .content-container h1 {
-    font-size: 1.4rem;
+    font-size: 2rem;
     font-weight: 600;
   }
 
@@ -895,11 +904,6 @@ footer {
     --bigDia: 250px;
     --smallDia: 140px;
     --medRight: 180px;
-  }
-
-  .intro-text,
-  .about-title {
-    font-size: 3.5rem;
   }
 
   .introduction-content h3,
