@@ -85,24 +85,10 @@ function createSideBySideProjects(project1, project2) {
   return section;
 }
 
-const tooltips = document.getElementsByClassName("object-tooltip");
 const b2c = document.getElementById("b2c-trigger");
 const dataviz = document.getElementById("dataviz-trigger");
 const ur = document.getElementById("ur-trigger");
 const joulea = document.getElementById("joulea-trigger");
-const b2cTooltip = document.getElementById("b2c-object-tooltip");
-const datavizTooltip = document.getElementById("dataviz-object-tooltip");
-const urTooltip = document.getElementById("ur-object-tooltip");
-
-window.onmousemove = function (e) {
-  const x = e.clientX,
-    y = e.clientY + window.scrollY;
-
-  for (const tooltip of tooltips) {
-    tooltip.style.top = y + 20 + "px";
-    tooltip.style.left = x - 120 + "px";
-  }
-};
 
 async function createSphere(containerElement, projectList) {
   const sW = containerElement.offsetWidth;
@@ -264,37 +250,6 @@ async function createSphere(containerElement, projectList) {
       render.canvas.style.cursor = "pointer";
       return Bounds.contains(item.bounds, mousePosition);
     });
-
-    stack.forEach((item) => {
-      const mousePosition = event.mouse.position;
-
-      if (Bounds.contains(item.bounds, mousePosition)) {
-        currentlyHoveredObject = item.label;
-
-        if (item.label === projectNames.DHY) {
-          b2cTooltip.style.visibility = "visible";
-        } else {
-          b2cTooltip.style.visibility = "hidden";
-        }
-        if (item.label === projectNames.TABLEAU) {
-          datavizTooltip.style.visibility = "visible";
-        } else {
-          datavizTooltip.style.visibility = "hidden";
-        }
-        if (item.label === projectNames.REDDIT) {
-          urTooltip.style.visibility = "visible";
-        } else {
-          urTooltip.style.visibility = "hidden";
-        }
-      }
-    });
-
-    if (!isHovering) {
-      currentlyHoveredObject = null;
-      b2cTooltip.style.visibility = "hidden";
-      datavizTooltip.style.visibility = "hidden";
-      urTooltip.style.visibility = "hidden";
-    }
 
     jiggleObjects();
   });

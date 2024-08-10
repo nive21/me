@@ -133,19 +133,6 @@ h2 {
   visibility: visible;
 }
 
-.object-tooltip {
-  display: inline-block;
-  visibility: hidden;
-  position: absolute;
-  width: 200px;
-  background-color: var(--blue-color);
-  color: var(--cream-color);
-  text-align: center;
-  border-radius: 14px;
-  padding: 5px;
-  z-index: 2;
-}
-
 .show-tooltip {
   visibility: visible;
 }
@@ -610,7 +597,7 @@ h2 {
   /* border: 2.5px solid var(--font-color); */
   border-radius: 12px;
   background-color: #f0f0ee;
-  box-shadow: -2px 2px #afafaf;
+  box-shadow: -2px 2px #979797;
   display: flex;
   justify-content: center;
   cursor: pointer;
