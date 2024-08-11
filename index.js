@@ -34,7 +34,7 @@ function createProjectSection(projectName, smallProject = false) {
   img.alt = projectName;
   img.className = "card-icon";
 
-  const title = document.createElement("h1");
+  const title = document.createElement("h2");
   title.textContent = project?.title ?? "";
 
   const contextContainer = document.createElement("div");
@@ -328,12 +328,12 @@ window.addEventListener("load", async function () {
   projectsList.appendChild(
     createSideBySideSections(
       createProjectSection(projectNames.DHY),
-      createProjectSection(projectNames.SCROLLY)
+      createProjectSection(projectNames.TABLEAU)
     )
   );
   projectsList.appendChild(
     createSideBySideSections(
-      createProjectSection(projectNames.TABLEAU),
+      createProjectSection(projectNames.SCROLLY),
       createSideBySideProjects(projectNames.REDDIT, projectNames.SPEAKER)
     )
   );

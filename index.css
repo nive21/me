@@ -57,6 +57,19 @@ h3 {
   font-family: "ClashDisplay-Medium", sans-serif;
 }
 
+h1 {
+  font-size: 4.5rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
 .bgd-gradients {
   position: fixed;
   top: 0;
@@ -72,6 +85,12 @@ h3 {
   margin-left: 20vw;
   position: relative;
   top: -60px;
+}
+
+.bottom-right-gradient {
+  right: -120px;
+  bottom: 180px;
+  position: relative;
 }
 
 .bgd-image {
@@ -208,7 +227,7 @@ h2 {
   margin: 0;
 }
 
-.content__container__list__item h3 {
+.content__container__list__item h1 {
   color: #3340f1;
 }
 
@@ -563,7 +582,6 @@ h2 {
 }
 
 .contact {
-  background-color: var(--cream-color);
   margin: 0 5vw;
   padding: 60px 0 80px;
   position: relative;
@@ -652,23 +670,13 @@ h2 {
   width: 90%;
 }
 
-.content-container h1 {
+.content-container h2 {
   font-size: 1.5rem;
   font-weight: 500;
 }
 
-.content-container h2 {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
 .content-container p {
   padding-bottom: 1rem;
-}
-
-.content-container h3 {
-  font-size: 1rem;
-  padding-bottom: 4px;
 }
 
 .title-container {
@@ -697,18 +705,17 @@ footer {
 }
 
 .introduction-content p,
-.introduction-content h3 {
+.introduction-content h1 {
   color: var(--cream-color);
 }
 
-.introduction-content h3,
-.contact h3 {
-  font-size: 4.5rem;
+.introduction-content h1,
+.contact h1 {
   font-weight: 400;
   padding-bottom: 10px;
 }
 
-.contact h3 {
+.contact h1 {
   color: var(--font-color);
 }
 
@@ -773,11 +780,11 @@ footer {
 
 .time-div-container .title {
   font-family: "ClashDisplay-Medium", sans-serif;
-  font-size: 1.8rem;
   padding-bottom: 8px;
 }
 
-.timeline div p {
+.timeline div p,
+.timeline div h4 {
   position: relative;
   top: -40px;
   color: var(--cream-color);
@@ -822,21 +829,6 @@ footer {
     width: 90vw;
   }
 
-  .content-container h1 {
-    font-size: 2rem;
-    font-weight: 600;
-  }
-
-  .content-container h2 {
-    font-size: 1rem;
-    font-weight: 600;
-  }
-
-  .content-container h3 {
-    font-size: 1rem;
-    font-weight: 600;
-  }
-
   .content-container p {
     font-size: 0.9rem;
   }
@@ -855,7 +847,7 @@ footer {
   }
 
   body {
-    overflow: auto;
+    overflow-x: clip;
     height: calc(150vh);
   }
 
@@ -906,9 +898,24 @@ footer {
     --medRight: 180px;
   }
 
-  .introduction-content h3,
-  .contact h3 {
+  h1 {
     font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  .content__container__top {
+    height: 4rem;
+  }
+
+  .content__container__list__item {
+    line-height: 4rem;
   }
 
   .sbs-section,

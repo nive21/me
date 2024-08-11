@@ -122,7 +122,7 @@ export const data = {
       year. In addition, the website redesign led to approximately 50% reduction in the
       bounce rate.
       `,
-    mainImage: "./assets/images-on-pages/dhyana/cover.png",
+    mainImage: "./assets/dhyana.gif",
   },
   [projectNames.UI]: {
     title: "A multitouch interactive tool",
@@ -175,7 +175,7 @@ export const data = {
       revealed and charts animated upon scrolling. The site also
       featured an interactive data exploration tool, enabling users to
       delve into the data and discover their own insights.`,
-    mainImage: "./assets/images-on-pages/dataviz/cover.png",
+    mainImage: "./assets/scrollytelling.gif",
   },
   [projectNames.REDDIT]: {
     title: "Gun discourse on Reddit",
