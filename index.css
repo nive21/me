@@ -884,7 +884,8 @@ footer {
   }
 
   .portrait img {
-    width: 80vw;
+    width: 100vw;
+    max-height: 80vw;
   }
 
   .introduction {
