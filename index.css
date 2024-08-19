@@ -698,6 +698,16 @@ footer {
   margin-top: 60px;
 }
 
+.portrait img {
+  width: 50vw;
+  max-height: 40vw;
+  object-fit: cover;
+}
+
+.introduction {
+  display: flex;
+}
+
 .introduction-content {
   margin: 0px 5vw;
   padding-top: 80px;
@@ -871,6 +881,14 @@ footer {
 
   .card-small {
     width: calc(45vw - 14px);
+  }
+
+  .portrait img {
+    width: 80vw;
+  }
+
+  .introduction {
+    flex-direction: column;
   }
 
   .sbs-super-section {
