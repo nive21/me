@@ -699,9 +699,10 @@ footer {
 }
 
 .portrait img {
-  width: 50vw;
-  max-height: 40vw;
-  object-fit: cover;
+  width: 40vw;
+  max-width: 800px;
+  padding: 50px 5px;
+  object-fit: contain;
 }
 
 .introduction {
@@ -885,7 +886,6 @@ footer {
 
   .portrait img {
     width: 100vw;
-    max-height: 80vw;
   }
 
   .introduction {
