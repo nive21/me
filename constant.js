@@ -180,16 +180,15 @@ export const data = {
   [projectNames.REDDIT]: {
     title: "Gun discourse on Reddit",
     tags: ["cscw 2024 submission"],
-    keyText: `The paper has been submitted to the CSCW 2024 conference.`,
+    keyText: `The resulting result was published by CSCW.`,
     icon: "./assets/projects/REDDIT.svg",
     sameSizeIcon: "./assets/projects-same-size/REDDIT.svg",
     highlightedIcon: "./assets/projects-highlighted/REDDIT.svg",
     imageAlt: "Description 2",
     problemText: `Our goal was to understand the
       motivations and impact of online conversations on guns.`,
-    resultsText: `Our research paper was submitted to the Computer-Supported
-      Cooperative Work & Social Computing (CSCW) 2024 conference and is
-      currently undergoing review.`,
+    resultsText: `The resulting research was published by Computer-Supported
+      Cooperative Work & Social Computing (CSCW).`,
   },
   [projectNames.SPEAKER]: {
     title: "Immersive Audio Stories",
